@@ -1,0 +1,516 @@
+type AdminChanged @entity(immutable: true) {
+  id: Bytes!
+  previousAdmin: Bytes! # address
+  newAdmin: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type BeaconUpgraded @entity(immutable: true) {
+  id: Bytes!
+  beacon: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Upgraded @entity(immutable: true) {
+  id: Bytes!
+  implementation: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+type Approval @entity(immutable: true) {
+  id: Bytes!
+  owner: Bytes! # address
+  spender: Bytes! # address
+  value: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type BlockedReward @entity(immutable: true) {
+  id: Bytes!
+  winner: Bytes! # address
+  amount: BigInt! # uint256
+  startBlock: BigInt! # uint256
+  endBlock: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type BurnFluid @entity(immutable: true) {
+  id: Bytes!
+  addr: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Emergency @entity(immutable: true) {
+  id: Bytes!
+  status: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MaxUncheckedRewardLimitChanged @entity(immutable: true) {
+  id: Bytes!
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MintApproval @entity(immutable: true) {
+  id: Bytes!
+  owner: Bytes! # address
+  spender: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MintFluid @entity(immutable: true) {
+  id: Bytes!
+  addr: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type NewOperator @entity(immutable: true) {
+  id: Bytes!
+  old: Bytes! # address
+  new_: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OperatorChanged @entity(immutable: true) {
+  id: Bytes!
+  oldOperator: Bytes! # address
+  newOperator: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Reward @entity(immutable: true) {
+  id: Bytes!
+  winner: Bytes! # address
+  amount: BigInt! # uint256
+  startBlock: BigInt! # uint256
+  endBlock: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RewardQuarantineThresholdUpdated @entity(immutable: true) {
+  id: Bytes!
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Transfer @entity(immutable: true) {
+  id: Bytes!
+  from: Bytes! # address
+  to: Bytes! # address
+  value: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UnblockReward @entity(immutable: true) {
+  id: Bytes!
+  originalRewardTx: Bytes! # bytes32
+  winner: Bytes! # address
+  amount: BigInt! # uint256
+  startBlock: BigInt! # uint256
+  endBlock: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+type fDAIApproval @entity(immutable: true) {
+  id: Bytes!
+  owner: Bytes! # address
+  spender: Bytes! # address
+  value: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fDAIBlockedReward @entity(immutable: true) {
+  id: Bytes!
+  winner: Bytes! # address
+  amount: BigInt! # uint256
+  startBlock: BigInt! # uint256
+  endBlock: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fDAIBurnFluid @entity(immutable: true) {
+  id: Bytes!
+  addr: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fDAIEmergency @entity(immutable: true) {
+  id: Bytes!
+  status: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fDAIMaxUncheckedRewardLimitChanged @entity(immutable: true) {
+  id: Bytes!
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fDAIMintApproval @entity(immutable: true) {
+  id: Bytes!
+  owner: Bytes! # address
+  spender: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fDAIMintFluid @entity(immutable: true) {
+  id: Bytes!
+  addr: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fDAINewOperator @entity(immutable: true) {
+  id: Bytes!
+  old: Bytes! # address
+  new_: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fDAIOperatorChanged @entity(immutable: true) {
+  id: Bytes!
+  oldOperator: Bytes! # address
+  newOperator: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fDAIReward @entity(immutable: true) {
+  id: Bytes!
+  winner: Bytes! # address
+  amount: BigInt! # uint256
+  startBlock: BigInt! # uint256
+  endBlock: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fDAIRewardQuarantineThresholdUpdated @entity(immutable: true) {
+  id: Bytes!
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fDAITransfer @entity(immutable: true) {
+  id: Bytes!
+  from: Bytes! # address
+  to: Bytes! # address
+  value: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fDAIUnblockReward @entity(immutable: true) {
+  id: Bytes!
+  originalRewardTx: Bytes! # bytes32
+  winner: Bytes! # address
+  amount: BigInt! # uint256
+  startBlock: BigInt! # uint256
+  endBlock: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+type fTUSDApproval @entity(immutable: true) {
+  id: Bytes!
+  owner: Bytes! # address
+  spender: Bytes! # address
+  value: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fTUSDBlockedReward @entity(immutable: true) {
+  id: Bytes!
+  winner: Bytes! # address
+  amount: BigInt! # uint256
+  startBlock: BigInt! # uint256
+  endBlock: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fTUSDBurnFluid @entity(immutable: true) {
+  id: Bytes!
+  addr: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fTUSDEmergency @entity(immutable: true) {
+  id: Bytes!
+  status: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fTUSDMaxUncheckedRewardLimitChanged @entity(immutable: true) {
+  id: Bytes!
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fTUSDMintApproval @entity(immutable: true) {
+  id: Bytes!
+  owner: Bytes! # address
+  spender: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fTUSDMintFluid @entity(immutable: true) {
+  id: Bytes!
+  addr: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fTUSDNewOperator @entity(immutable: true) {
+  id: Bytes!
+  old: Bytes! # address
+  new_: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fTUSDOperatorChanged @entity(immutable: true) {
+  id: Bytes!
+  oldOperator: Bytes! # address
+  newOperator: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fTUSDReward @entity(immutable: true) {
+  id: Bytes!
+  winner: Bytes! # address
+  amount: BigInt! # uint256
+  startBlock: BigInt! # uint256
+  endBlock: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fTUSDRewardQuarantineThresholdUpdated @entity(immutable: true) {
+  id: Bytes!
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fTUSDTransfer @entity(immutable: true) {
+  id: Bytes!
+  from: Bytes! # address
+  to: Bytes! # address
+  value: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fTUSDUnblockReward @entity(immutable: true) {
+  id: Bytes!
+  originalRewardTx: Bytes! # bytes32
+  winner: Bytes! # address
+  amount: BigInt! # uint256
+  startBlock: BigInt! # uint256
+  endBlock: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+type fFRAXApproval @entity(immutable: true) {
+  id: Bytes!
+  owner: Bytes! # address
+  spender: Bytes! # address
+  value: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fFRAXBlockedReward @entity(immutable: true) {
+  id: Bytes!
+  winner: Bytes! # address
+  amount: BigInt! # uint256
+  startBlock: BigInt! # uint256
+  endBlock: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fFRAXBurnFluid @entity(immutable: true) {
+  id: Bytes!
+  addr: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fFRAXEmergency @entity(immutable: true) {
+  id: Bytes!
+  status: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fFRAXMaxUncheckedRewardLimitChanged @entity(immutable: true) {
+  id: Bytes!
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fFRAXMintApproval @entity(immutable: true) {
+  id: Bytes!
+  owner: Bytes! # address
+  spender: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fFRAXMintFluid @entity(immutable: true) {
+  id: Bytes!
+  addr: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fFRAXNewOperator @entity(immutable: true) {
+  id: Bytes!
+  old: Bytes! # address
+  new_: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fFRAXOperatorChanged @entity(immutable: true) {
+  id: Bytes!
+  oldOperator: Bytes! # address
+  newOperator: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fFRAXReward @entity(immutable: true) {
+  id: Bytes!
+  winner: Bytes! # address
+  amount: BigInt! # uint256
+  startBlock: BigInt! # uint256
+  endBlock: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fFRAXRewardQuarantineThresholdUpdated @entity(immutable: true) {
+  id: Bytes!
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fFRAXTransfer @entity(immutable: true) {
+  id: Bytes!
+  from: Bytes! # address
+  to: Bytes! # address
+  value: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type fFRAXUnblockReward @entity(immutable: true) {
+  id: Bytes!
+  originalRewardTx: Bytes! # bytes32
+  winner: Bytes! # address
+  amount: BigInt! # uint256
+  startBlock: BigInt! # uint256
+  endBlock: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
