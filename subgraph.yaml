@@ -14,19 +14,49 @@ dataSources:
       apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
-        - AdminChanged
-        - BeaconUpgraded
-        - Upgraded
+        - fUSDTApproval
+        - fUSDTBlockedReward
+        - fUSDTBurnFluid
+        - fUSDTEmergency
+        - fUSDTMaxUncheckedRewardLimitChanged
+        - fUSDTMintApproval
+        - fUSDTMintFluid
+        - fUSDTNewOperator
+        - fUSDTOperatorChanged
+        - fUSDTReward
+        - fUSDTRewardQuarantineThresholdUpdated
+        - fUSDTTransfer
+        - fUSDTUnblockReward
       abis:
         - name: fUSDT
           file: ./abis/fUSDT.json
       eventHandlers:
-        - event: AdminChanged(address,address)
-          handler: handleAdminChanged
-        - event: BeaconUpgraded(indexed address)
-          handler: handleBeaconUpgraded
-        - event: Upgraded(indexed address)
-          handler: handleUpgraded
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handlefUSDTApproval
+        - event: BlockedReward(indexed address,uint256,uint256,uint256)
+          handler: handlefUSDTBlockedReward
+        - event: BurnFluid(indexed address,uint256)
+          handler: handlefUSDTBurnFluid
+        - event: Emergency(indexed bool)
+          handler: handlefUSDTEmergency
+        - event: MaxUncheckedRewardLimitChanged(uint256)
+          handler: handlefUSDTMaxUncheckedRewardLimitChanged
+        - event: MintApproval(indexed address,indexed address,uint256)
+          handler: handlefUSDTMintApproval
+        - event: MintFluid(indexed address,uint256)
+          handler: handlefUSDTMintFluid
+        - event: NewOperator(address,address)
+          handler: handlefUSDTNewOperator
+        - event: OperatorChanged(indexed address,indexed address)
+          handler: handlefUSDTOperatorChanged
+        - event: Reward(indexed address,uint256,uint256,uint256)
+          handler: handlefUSDTReward
+        - event: RewardQuarantineThresholdUpdated(uint256)
+          handler: handlefUSDTRewardQuarantineThresholdUpdated
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handlefFUSDTransfer
+        - event: UnblockReward(indexed bytes32,indexed address,uint256,uint256,uint256)
+          handler: handlefUSDTUnblockReward
       file: ./src/f-usdt.ts
   - kind: ethereum
     name: fUSDC
@@ -169,31 +199,31 @@ dataSources:
         - name: fTUSD
           file: ./abis/fTUSD.json
       eventHandlers:
-        - event: fTUSDApproval(indexed address,indexed address,uint256)
+        - event: Approval(indexed address,indexed address,uint256)
           handler: handlefTUSDApproval
-        - event: fTUSDBlockedReward(indexed address,uint256,uint256,uint256)
+        - event: BlockedReward(indexed address,uint256,uint256,uint256)
           handler: handlefTUSDBlockedReward
-        - event: fTUSDBurnFluid(indexed address,uint256)
+        - event: BurnFluid(indexed address,uint256)
           handler: handlefTUSDBurnFluid
-        - event: fTUSDEmergency(indexed bool)
+        - event: Emergency(indexed bool)
           handler: handlefTUSDEmergency
-        - event: fTUSDMaxUncheckedRewardLimitChanged(uint256)
+        - event: MaxUncheckedRewardLimitChanged(uint256)
           handler: handlefTUSDMaxUncheckedRewardLimitChanged
-        - event: fTUSDMintApproval(indexed address,indexed address,uint256)
+        - event: MintApproval(indexed address,indexed address,uint256)
           handler: handlefTUSDMintApproval
-        - event: fTUSDMintFluid(indexed address,uint256)
+        - event: MintFluid(indexed address,uint256)
           handler: handlefTUSDMintFluid
-        - event: fTUSDNewOperator(address,address)
+        - event: NewOperator(address,address)
           handler: handlefTUSDNewOperator
-        - event: fTUSDOperatorChanged(indexed address,indexed address)
+        - event: OperatorChanged(indexed address,indexed address)
           handler: handlefTUSDOperatorChanged
-        - event: fTUSDReward(indexed address,uint256,uint256,uint256)
+        - event: Reward(indexed address,uint256,uint256,uint256)
           handler: handlefTUSDReward
-        - event: fTUSDRewardQuarantineThresholdUpdated(uint256)
+        - event: RewardQuarantineThresholdUpdated(uint256)
           handler: handlefTUSDRewardQuarantineThresholdUpdated
-        - event: fTUSDTransfer(indexed address,indexed address,uint256)
+        - event: Transfer(indexed address,indexed address,uint256)
           handler: handlefTUSDTransfer
-        - event: fTUSDUnblockReward(indexed bytes32,indexed address,uint256,uint256,uint256)
+        - event: UnblockReward(indexed bytes32,indexed address,uint256,uint256,uint256)
           handler: handlefTUSDUnblockReward
       file: ./src/f-tusd.ts
   - kind: ethereum
@@ -225,30 +255,30 @@ dataSources:
         - name: fFRAX
           file: ./abis/fFRAX.json
       eventHandlers:
-        - event: fFRAXApproval(indexed address,indexed address,uint256)
+        - event: Approval(indexed address,indexed address,uint256)
           handler: handlefFRAXApproval
-        - event: fFRAXBlockedReward(indexed address,uint256,uint256,uint256)
+        - event: BlockedReward(indexed address,uint256,uint256,uint256)
           handler: handlefFRAXBlockedReward
-        - event: fFRAXBurnFluid(indexed address,uint256)
+        - event: BurnFluid(indexed address,uint256)
           handler: handlefFRAXBurnFluid
-        - event: fFRAXEmergency(indexed bool)
+        - event: Emergency(indexed bool)
           handler: handlefFRAXEmergency
-        - event: fFRAXMaxUncheckedRewardLimitChanged(uint256)
+        - event: MaxUncheckedRewardLimitChanged(uint256)
           handler: handlefFRAXMaxUncheckedRewardLimitChanged
-        - event: fFRAXMintApproval(indexed address,indexed address,uint256)
+        - event: MintApproval(indexed address,indexed address,uint256)
           handler: handlefFRAXMintApproval
-        - event: fFRAXMintFluid(indexed address,uint256)
+        - event: MintFluid(indexed address,uint256)
           handler: handlefFRAXMintFluid
-        - event: fFRAXNewOperator(address,address)
+        - event: NewOperator(address,address)
           handler: handlefFRAXNewOperator
-        - event: fFRAXOperatorChanged(indexed address,indexed address)
+        - event: OperatorChanged(indexed address,indexed address)
           handler: handlefFRAXOperatorChanged
-        - event: fFRAXReward(indexed address,uint256,uint256,uint256)
+        - event: Reward(indexed address,uint256,uint256,uint256)
           handler: handlefFRAXReward
-        - event: fFRAXRewardQuarantineThresholdUpdated(uint256)
+        - event: RewardQuarantineThresholdUpdated(uint256)
           handler: handlefFRAXRewardQuarantineThresholdUpdated
-        - event: fFRAXTransfer(indexed address,indexed address,uint256)
+        - event: Transfer(indexed address,indexed address,uint256)
           handler: handlefFRAXTransfer
-        - event: fFRAXUnblockReward(indexed bytes32,indexed address,uint256,uint256,uint256)
+        - event: UnblockReward(indexed bytes32,indexed address,uint256,uint256,uint256)
           handler: handlefFRAXUnblockReward
       file: ./src/f-frax.ts

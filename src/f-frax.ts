@@ -1,17 +1,17 @@
 import {
-  fFRAXApproval as fFRAXApprovalEvent,
-  fFRAXBlockedReward as fFRAXBlockedRewardEvent,
-  fFRAXBurnFluid as fFRAXBurnFluidEvent,
-  fFRAXEmergency as fFRAXEmergencyEvent,
-  fFRAXMaxUncheckedRewardLimitChanged as fFRAXMaxUncheckedRewardLimitChangedEvent,
-  fFRAXMintApproval as fFRAXMintApprovalEvent,
-  fFRAXMintFluid as fFRAXMintFluidEvent,
-  fFRAXNewOperator as fFRAXNewOperatorEvent,
-  fFRAXOperatorChanged as fFRAXOperatorChangedEvent,
-  fFRAXReward as fFRAXRewardEvent,
-  fFRAXRewardQuarantineThresholdUpdated as fFRAXRewardQuarantineThresholdUpdatedEvent,
-  fFRAXTransfer as fFRAXTransferEvent,
-  fFRAXUnblockReward as fFRAXUnblockRewardEvent
+  Approval as fFRAXApprovalEvent,
+  BlockedReward as fFRAXBlockedRewardEvent,
+  BurnFluid as fFRAXBurnFluidEvent,
+  Emergency as fFRAXEmergencyEvent,
+  MaxUncheckedRewardLimitChanged as fFRAXMaxUncheckedRewardLimitChangedEvent,
+  MintApproval as fFRAXMintApprovalEvent,
+  MintFluid as fFRAXMintFluidEvent,
+  NewOperator as fFRAXNewOperatorEvent,
+  OperatorChanged as fFRAXOperatorChangedEvent,
+  Reward as fFRAXRewardEvent,
+  RewardQuarantineThresholdUpdated as fFRAXRewardQuarantineThresholdUpdatedEvent,
+  Transfer as fFRAXTransferEvent,
+  UnblockReward as fFRAXUnblockRewardEvent
 } from "../generated/fFRAX/fFRAX"
 import {
   fFRAXApproval,
@@ -31,7 +31,7 @@ import {
 
 export function handlefFRAXApproval(event: fFRAXApprovalEvent): void {
   let entity = new fFRAXApproval(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.owner = event.params.owner
   entity.spender = event.params.spender
@@ -46,7 +46,7 @@ export function handlefFRAXApproval(event: fFRAXApprovalEvent): void {
 
 export function handlefFRAXBlockedReward(event: fFRAXBlockedRewardEvent): void {
   let entity = new fFRAXBlockedReward(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.winner = event.params.winner
   entity.amount = event.params.amount
@@ -62,7 +62,7 @@ export function handlefFRAXBlockedReward(event: fFRAXBlockedRewardEvent): void {
 
 export function handlefFRAXBurnFluid(event: fFRAXBurnFluidEvent): void {
   let entity = new fFRAXBurnFluid(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.addr = event.params.addr
   entity.amount = event.params.amount
@@ -76,7 +76,7 @@ export function handlefFRAXBurnFluid(event: fFRAXBurnFluidEvent): void {
 
 export function handlefFRAXEmergency(event: fFRAXEmergencyEvent): void {
   let entity = new fFRAXEmergency(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.status = event.params.status
 
@@ -91,7 +91,7 @@ export function handlefFRAXMaxUncheckedRewardLimitChanged(
   event: fFRAXMaxUncheckedRewardLimitChangedEvent
 ): void {
   let entity = new fFRAXMaxUncheckedRewardLimitChanged(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.amount = event.params.amount
 
@@ -104,7 +104,7 @@ export function handlefFRAXMaxUncheckedRewardLimitChanged(
 
 export function handlefFRAXMintApproval(event: fFRAXMintApprovalEvent): void {
   let entity = new fFRAXMintApproval(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.owner = event.params.owner
   entity.spender = event.params.spender
@@ -119,7 +119,7 @@ export function handlefFRAXMintApproval(event: fFRAXMintApprovalEvent): void {
 
 export function handlefFRAXMintFluid(event: fFRAXMintFluidEvent): void {
   let entity = new fFRAXMintFluid(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.addr = event.params.addr
   entity.amount = event.params.amount
@@ -133,7 +133,7 @@ export function handlefFRAXMintFluid(event: fFRAXMintFluidEvent): void {
 
 export function handlefFRAXNewOperator(event: fFRAXNewOperatorEvent): void {
   let entity = new fFRAXNewOperator(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.old = event.params.old
   entity.new_ = event.params.new_
@@ -149,7 +149,7 @@ export function handlefFRAXOperatorChanged(
   event: fFRAXOperatorChangedEvent
 ): void {
   let entity = new fFRAXOperatorChanged(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.oldOperator = event.params.oldOperator
   entity.newOperator = event.params.newOperator
@@ -163,7 +163,7 @@ export function handlefFRAXOperatorChanged(
 
 export function handlefFRAXReward(event: fFRAXRewardEvent): void {
   let entity = new fFRAXReward(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.winner = event.params.winner
   entity.amount = event.params.amount
@@ -181,7 +181,7 @@ export function handlefFRAXRewardQuarantineThresholdUpdated(
   event: fFRAXRewardQuarantineThresholdUpdatedEvent
 ): void {
   let entity = new fFRAXRewardQuarantineThresholdUpdated(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.amount = event.params.amount
 
@@ -194,7 +194,7 @@ export function handlefFRAXRewardQuarantineThresholdUpdated(
 
 export function handlefFRAXTransfer(event: fFRAXTransferEvent): void {
   let entity = new fFRAXTransfer(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.from = event.params.from
   entity.to = event.params.to
@@ -209,7 +209,7 @@ export function handlefFRAXTransfer(event: fFRAXTransferEvent): void {
 
 export function handlefFRAXUnblockReward(event: fFRAXUnblockRewardEvent): void {
   let entity = new fFRAXUnblockReward(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.originalRewardTx = event.params.originalRewardTx
   entity.winner = event.params.winner

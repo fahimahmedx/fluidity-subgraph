@@ -10,16 +10,16 @@ import {
   BigInt
 } from "@graphprotocol/graph-ts";
 
-export class fFRAXApproval extends ethereum.Event {
-  get params(): fFRAXApproval__Params {
-    return new fFRAXApproval__Params(this);
+export class Approval extends ethereum.Event {
+  get params(): Approval__Params {
+    return new Approval__Params(this);
   }
 }
 
-export class fFRAXApproval__Params {
-  _event: fFRAXApproval;
+export class Approval__Params {
+  _event: Approval;
 
-  constructor(event: fFRAXApproval) {
+  constructor(event: Approval) {
     this._event = event;
   }
 
@@ -36,16 +36,16 @@ export class fFRAXApproval__Params {
   }
 }
 
-export class fFRAXBlockedReward extends ethereum.Event {
-  get params(): fFRAXBlockedReward__Params {
-    return new fFRAXBlockedReward__Params(this);
+export class BlockedReward extends ethereum.Event {
+  get params(): BlockedReward__Params {
+    return new BlockedReward__Params(this);
   }
 }
 
-export class fFRAXBlockedReward__Params {
-  _event: fFRAXBlockedReward;
+export class BlockedReward__Params {
+  _event: BlockedReward;
 
-  constructor(event: fFRAXBlockedReward) {
+  constructor(event: BlockedReward) {
     this._event = event;
   }
 
@@ -66,16 +66,16 @@ export class fFRAXBlockedReward__Params {
   }
 }
 
-export class fFRAXBurnFluid extends ethereum.Event {
-  get params(): fFRAXBurnFluid__Params {
-    return new fFRAXBurnFluid__Params(this);
+export class BurnFluid extends ethereum.Event {
+  get params(): BurnFluid__Params {
+    return new BurnFluid__Params(this);
   }
 }
 
-export class fFRAXBurnFluid__Params {
-  _event: fFRAXBurnFluid;
+export class BurnFluid__Params {
+  _event: BurnFluid;
 
-  constructor(event: fFRAXBurnFluid) {
+  constructor(event: BurnFluid) {
     this._event = event;
   }
 
@@ -88,16 +88,16 @@ export class fFRAXBurnFluid__Params {
   }
 }
 
-export class fFRAXEmergency extends ethereum.Event {
-  get params(): fFRAXEmergency__Params {
-    return new fFRAXEmergency__Params(this);
+export class Emergency extends ethereum.Event {
+  get params(): Emergency__Params {
+    return new Emergency__Params(this);
   }
 }
 
-export class fFRAXEmergency__Params {
-  _event: fFRAXEmergency;
+export class Emergency__Params {
+  _event: Emergency;
 
-  constructor(event: fFRAXEmergency) {
+  constructor(event: Emergency) {
     this._event = event;
   }
 
@@ -106,16 +106,16 @@ export class fFRAXEmergency__Params {
   }
 }
 
-export class fFRAXMaxUncheckedRewardLimitChanged extends ethereum.Event {
-  get params(): fFRAXMaxUncheckedRewardLimitChanged__Params {
-    return new fFRAXMaxUncheckedRewardLimitChanged__Params(this);
+export class MaxUncheckedRewardLimitChanged extends ethereum.Event {
+  get params(): MaxUncheckedRewardLimitChanged__Params {
+    return new MaxUncheckedRewardLimitChanged__Params(this);
   }
 }
 
-export class fFRAXMaxUncheckedRewardLimitChanged__Params {
-  _event: fFRAXMaxUncheckedRewardLimitChanged;
+export class MaxUncheckedRewardLimitChanged__Params {
+  _event: MaxUncheckedRewardLimitChanged;
 
-  constructor(event: fFRAXMaxUncheckedRewardLimitChanged) {
+  constructor(event: MaxUncheckedRewardLimitChanged) {
     this._event = event;
   }
 
@@ -124,16 +124,16 @@ export class fFRAXMaxUncheckedRewardLimitChanged__Params {
   }
 }
 
-export class fFRAXMintApproval extends ethereum.Event {
-  get params(): fFRAXMintApproval__Params {
-    return new fFRAXMintApproval__Params(this);
+export class MintApproval extends ethereum.Event {
+  get params(): MintApproval__Params {
+    return new MintApproval__Params(this);
   }
 }
 
-export class fFRAXMintApproval__Params {
-  _event: fFRAXMintApproval;
+export class MintApproval__Params {
+  _event: MintApproval;
 
-  constructor(event: fFRAXMintApproval) {
+  constructor(event: MintApproval) {
     this._event = event;
   }
 
@@ -150,16 +150,16 @@ export class fFRAXMintApproval__Params {
   }
 }
 
-export class fFRAXMintFluid extends ethereum.Event {
-  get params(): fFRAXMintFluid__Params {
-    return new fFRAXMintFluid__Params(this);
+export class MintFluid extends ethereum.Event {
+  get params(): MintFluid__Params {
+    return new MintFluid__Params(this);
   }
 }
 
-export class fFRAXMintFluid__Params {
-  _event: fFRAXMintFluid;
+export class MintFluid__Params {
+  _event: MintFluid;
 
-  constructor(event: fFRAXMintFluid) {
+  constructor(event: MintFluid) {
     this._event = event;
   }
 
@@ -172,16 +172,16 @@ export class fFRAXMintFluid__Params {
   }
 }
 
-export class fFRAXNewOperator extends ethereum.Event {
-  get params(): fFRAXNewOperator__Params {
-    return new fFRAXNewOperator__Params(this);
+export class NewOperator extends ethereum.Event {
+  get params(): NewOperator__Params {
+    return new NewOperator__Params(this);
   }
 }
 
-export class fFRAXNewOperator__Params {
-  _event: fFRAXNewOperator;
+export class NewOperator__Params {
+  _event: NewOperator;
 
-  constructor(event: fFRAXNewOperator) {
+  constructor(event: NewOperator) {
     this._event = event;
   }
 
@@ -194,16 +194,16 @@ export class fFRAXNewOperator__Params {
   }
 }
 
-export class fFRAXOperatorChanged extends ethereum.Event {
-  get params(): fFRAXOperatorChanged__Params {
-    return new fFRAXOperatorChanged__Params(this);
+export class OperatorChanged extends ethereum.Event {
+  get params(): OperatorChanged__Params {
+    return new OperatorChanged__Params(this);
   }
 }
 
-export class fFRAXOperatorChanged__Params {
-  _event: fFRAXOperatorChanged;
+export class OperatorChanged__Params {
+  _event: OperatorChanged;
 
-  constructor(event: fFRAXOperatorChanged) {
+  constructor(event: OperatorChanged) {
     this._event = event;
   }
 
@@ -216,16 +216,16 @@ export class fFRAXOperatorChanged__Params {
   }
 }
 
-export class fFRAXReward extends ethereum.Event {
-  get params(): fFRAXReward__Params {
-    return new fFRAXReward__Params(this);
+export class Reward extends ethereum.Event {
+  get params(): Reward__Params {
+    return new Reward__Params(this);
   }
 }
 
-export class fFRAXReward__Params {
-  _event: fFRAXReward;
+export class Reward__Params {
+  _event: Reward;
 
-  constructor(event: fFRAXReward) {
+  constructor(event: Reward) {
     this._event = event;
   }
 
@@ -246,16 +246,16 @@ export class fFRAXReward__Params {
   }
 }
 
-export class fFRAXRewardQuarantineThresholdUpdated extends ethereum.Event {
-  get params(): fFRAXRewardQuarantineThresholdUpdated__Params {
-    return new fFRAXRewardQuarantineThresholdUpdated__Params(this);
+export class RewardQuarantineThresholdUpdated extends ethereum.Event {
+  get params(): RewardQuarantineThresholdUpdated__Params {
+    return new RewardQuarantineThresholdUpdated__Params(this);
   }
 }
 
-export class fFRAXRewardQuarantineThresholdUpdated__Params {
-  _event: fFRAXRewardQuarantineThresholdUpdated;
+export class RewardQuarantineThresholdUpdated__Params {
+  _event: RewardQuarantineThresholdUpdated;
 
-  constructor(event: fFRAXRewardQuarantineThresholdUpdated) {
+  constructor(event: RewardQuarantineThresholdUpdated) {
     this._event = event;
   }
 
@@ -264,16 +264,16 @@ export class fFRAXRewardQuarantineThresholdUpdated__Params {
   }
 }
 
-export class fFRAXTransfer extends ethereum.Event {
-  get params(): fFRAXTransfer__Params {
-    return new fFRAXTransfer__Params(this);
+export class Transfer extends ethereum.Event {
+  get params(): Transfer__Params {
+    return new Transfer__Params(this);
   }
 }
 
-export class fFRAXTransfer__Params {
-  _event: fFRAXTransfer;
+export class Transfer__Params {
+  _event: Transfer;
 
-  constructor(event: fFRAXTransfer) {
+  constructor(event: Transfer) {
     this._event = event;
   }
 
@@ -290,16 +290,16 @@ export class fFRAXTransfer__Params {
   }
 }
 
-export class fFRAXUnblockReward extends ethereum.Event {
-  get params(): fFRAXUnblockReward__Params {
-    return new fFRAXUnblockReward__Params(this);
+export class UnblockReward extends ethereum.Event {
+  get params(): UnblockReward__Params {
+    return new UnblockReward__Params(this);
   }
 }
 
-export class fFRAXUnblockReward__Params {
-  _event: fFRAXUnblockReward;
+export class UnblockReward__Params {
+  _event: UnblockReward;
 
-  constructor(event: fFRAXUnblockReward) {
+  constructor(event: UnblockReward) {
     this._event = event;
   }
 

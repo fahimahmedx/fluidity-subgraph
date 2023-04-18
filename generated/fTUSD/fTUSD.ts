@@ -10,16 +10,16 @@ import {
   BigInt
 } from "@graphprotocol/graph-ts";
 
-export class fTUSDApproval extends ethereum.Event {
-  get params(): fTUSDApproval__Params {
-    return new fTUSDApproval__Params(this);
+export class Approval extends ethereum.Event {
+  get params(): Approval__Params {
+    return new Approval__Params(this);
   }
 }
 
-export class fTUSDApproval__Params {
-  _event: fTUSDApproval;
+export class Approval__Params {
+  _event: Approval;
 
-  constructor(event: fTUSDApproval) {
+  constructor(event: Approval) {
     this._event = event;
   }
 
@@ -36,16 +36,16 @@ export class fTUSDApproval__Params {
   }
 }
 
-export class fTUSDBlockedReward extends ethereum.Event {
-  get params(): fTUSDBlockedReward__Params {
-    return new fTUSDBlockedReward__Params(this);
+export class BlockedReward extends ethereum.Event {
+  get params(): BlockedReward__Params {
+    return new BlockedReward__Params(this);
   }
 }
 
-export class fTUSDBlockedReward__Params {
-  _event: fTUSDBlockedReward;
+export class BlockedReward__Params {
+  _event: BlockedReward;
 
-  constructor(event: fTUSDBlockedReward) {
+  constructor(event: BlockedReward) {
     this._event = event;
   }
 
@@ -66,16 +66,16 @@ export class fTUSDBlockedReward__Params {
   }
 }
 
-export class fTUSDBurnFluid extends ethereum.Event {
-  get params(): fTUSDBurnFluid__Params {
-    return new fTUSDBurnFluid__Params(this);
+export class BurnFluid extends ethereum.Event {
+  get params(): BurnFluid__Params {
+    return new BurnFluid__Params(this);
   }
 }
 
-export class fTUSDBurnFluid__Params {
-  _event: fTUSDBurnFluid;
+export class BurnFluid__Params {
+  _event: BurnFluid;
 
-  constructor(event: fTUSDBurnFluid) {
+  constructor(event: BurnFluid) {
     this._event = event;
   }
 
@@ -88,16 +88,16 @@ export class fTUSDBurnFluid__Params {
   }
 }
 
-export class fTUSDEmergency extends ethereum.Event {
-  get params(): fTUSDEmergency__Params {
-    return new fTUSDEmergency__Params(this);
+export class Emergency extends ethereum.Event {
+  get params(): Emergency__Params {
+    return new Emergency__Params(this);
   }
 }
 
-export class fTUSDEmergency__Params {
-  _event: fTUSDEmergency;
+export class Emergency__Params {
+  _event: Emergency;
 
-  constructor(event: fTUSDEmergency) {
+  constructor(event: Emergency) {
     this._event = event;
   }
 
@@ -106,16 +106,16 @@ export class fTUSDEmergency__Params {
   }
 }
 
-export class fTUSDMaxUncheckedRewardLimitChanged extends ethereum.Event {
-  get params(): fTUSDMaxUncheckedRewardLimitChanged__Params {
-    return new fTUSDMaxUncheckedRewardLimitChanged__Params(this);
+export class MaxUncheckedRewardLimitChanged extends ethereum.Event {
+  get params(): MaxUncheckedRewardLimitChanged__Params {
+    return new MaxUncheckedRewardLimitChanged__Params(this);
   }
 }
 
-export class fTUSDMaxUncheckedRewardLimitChanged__Params {
-  _event: fTUSDMaxUncheckedRewardLimitChanged;
+export class MaxUncheckedRewardLimitChanged__Params {
+  _event: MaxUncheckedRewardLimitChanged;
 
-  constructor(event: fTUSDMaxUncheckedRewardLimitChanged) {
+  constructor(event: MaxUncheckedRewardLimitChanged) {
     this._event = event;
   }
 
@@ -124,16 +124,16 @@ export class fTUSDMaxUncheckedRewardLimitChanged__Params {
   }
 }
 
-export class fTUSDMintApproval extends ethereum.Event {
-  get params(): fTUSDMintApproval__Params {
-    return new fTUSDMintApproval__Params(this);
+export class MintApproval extends ethereum.Event {
+  get params(): MintApproval__Params {
+    return new MintApproval__Params(this);
   }
 }
 
-export class fTUSDMintApproval__Params {
-  _event: fTUSDMintApproval;
+export class MintApproval__Params {
+  _event: MintApproval;
 
-  constructor(event: fTUSDMintApproval) {
+  constructor(event: MintApproval) {
     this._event = event;
   }
 
@@ -150,16 +150,16 @@ export class fTUSDMintApproval__Params {
   }
 }
 
-export class fTUSDMintFluid extends ethereum.Event {
-  get params(): fTUSDMintFluid__Params {
-    return new fTUSDMintFluid__Params(this);
+export class MintFluid extends ethereum.Event {
+  get params(): MintFluid__Params {
+    return new MintFluid__Params(this);
   }
 }
 
-export class fTUSDMintFluid__Params {
-  _event: fTUSDMintFluid;
+export class MintFluid__Params {
+  _event: MintFluid;
 
-  constructor(event: fTUSDMintFluid) {
+  constructor(event: MintFluid) {
     this._event = event;
   }
 
@@ -172,16 +172,16 @@ export class fTUSDMintFluid__Params {
   }
 }
 
-export class fTUSDNewOperator extends ethereum.Event {
-  get params(): fTUSDNewOperator__Params {
-    return new fTUSDNewOperator__Params(this);
+export class NewOperator extends ethereum.Event {
+  get params(): NewOperator__Params {
+    return new NewOperator__Params(this);
   }
 }
 
-export class fTUSDNewOperator__Params {
-  _event: fTUSDNewOperator;
+export class NewOperator__Params {
+  _event: NewOperator;
 
-  constructor(event: fTUSDNewOperator) {
+  constructor(event: NewOperator) {
     this._event = event;
   }
 
@@ -194,16 +194,16 @@ export class fTUSDNewOperator__Params {
   }
 }
 
-export class fTUSDOperatorChanged extends ethereum.Event {
-  get params(): fTUSDOperatorChanged__Params {
-    return new fTUSDOperatorChanged__Params(this);
+export class OperatorChanged extends ethereum.Event {
+  get params(): OperatorChanged__Params {
+    return new OperatorChanged__Params(this);
   }
 }
 
-export class fTUSDOperatorChanged__Params {
-  _event: fTUSDOperatorChanged;
+export class OperatorChanged__Params {
+  _event: OperatorChanged;
 
-  constructor(event: fTUSDOperatorChanged) {
+  constructor(event: OperatorChanged) {
     this._event = event;
   }
 
@@ -216,16 +216,16 @@ export class fTUSDOperatorChanged__Params {
   }
 }
 
-export class fTUSDReward extends ethereum.Event {
-  get params(): fTUSDReward__Params {
-    return new fTUSDReward__Params(this);
+export class Reward extends ethereum.Event {
+  get params(): Reward__Params {
+    return new Reward__Params(this);
   }
 }
 
-export class fTUSDReward__Params {
-  _event: fTUSDReward;
+export class Reward__Params {
+  _event: Reward;
 
-  constructor(event: fTUSDReward) {
+  constructor(event: Reward) {
     this._event = event;
   }
 
@@ -246,16 +246,16 @@ export class fTUSDReward__Params {
   }
 }
 
-export class fTUSDRewardQuarantineThresholdUpdated extends ethereum.Event {
-  get params(): fTUSDRewardQuarantineThresholdUpdated__Params {
-    return new fTUSDRewardQuarantineThresholdUpdated__Params(this);
+export class RewardQuarantineThresholdUpdated extends ethereum.Event {
+  get params(): RewardQuarantineThresholdUpdated__Params {
+    return new RewardQuarantineThresholdUpdated__Params(this);
   }
 }
 
-export class fTUSDRewardQuarantineThresholdUpdated__Params {
-  _event: fTUSDRewardQuarantineThresholdUpdated;
+export class RewardQuarantineThresholdUpdated__Params {
+  _event: RewardQuarantineThresholdUpdated;
 
-  constructor(event: fTUSDRewardQuarantineThresholdUpdated) {
+  constructor(event: RewardQuarantineThresholdUpdated) {
     this._event = event;
   }
 
@@ -264,16 +264,16 @@ export class fTUSDRewardQuarantineThresholdUpdated__Params {
   }
 }
 
-export class fTUSDTransfer extends ethereum.Event {
-  get params(): fTUSDTransfer__Params {
-    return new fTUSDTransfer__Params(this);
+export class Transfer extends ethereum.Event {
+  get params(): Transfer__Params {
+    return new Transfer__Params(this);
   }
 }
 
-export class fTUSDTransfer__Params {
-  _event: fTUSDTransfer;
+export class Transfer__Params {
+  _event: Transfer;
 
-  constructor(event: fTUSDTransfer) {
+  constructor(event: Transfer) {
     this._event = event;
   }
 
@@ -290,16 +290,16 @@ export class fTUSDTransfer__Params {
   }
 }
 
-export class fTUSDUnblockReward extends ethereum.Event {
-  get params(): fTUSDUnblockReward__Params {
-    return new fTUSDUnblockReward__Params(this);
+export class UnblockReward extends ethereum.Event {
+  get params(): UnblockReward__Params {
+    return new UnblockReward__Params(this);
   }
 }
 
-export class fTUSDUnblockReward__Params {
-  _event: fTUSDUnblockReward;
+export class UnblockReward__Params {
+  _event: UnblockReward;
 
-  constructor(event: fTUSDUnblockReward) {
+  constructor(event: UnblockReward) {
     this._event = event;
   }
 

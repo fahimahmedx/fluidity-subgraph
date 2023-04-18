@@ -1,17 +1,17 @@
 import {
-  fTUSDApproval as fTUSDApprovalEvent,
-  fTUSDBlockedReward as fTUSDBlockedRewardEvent,
-  fTUSDBurnFluid as fTUSDBurnFluidEvent,
-  fTUSDEmergency as fTUSDEmergencyEvent,
-  fTUSDMaxUncheckedRewardLimitChanged as fTUSDMaxUncheckedRewardLimitChangedEvent,
-  fTUSDMintApproval as fTUSDMintApprovalEvent,
-  fTUSDMintFluid as fTUSDMintFluidEvent,
-  fTUSDNewOperator as fTUSDNewOperatorEvent,
-  fTUSDOperatorChanged as fTUSDOperatorChangedEvent,
-  fTUSDReward as fTUSDRewardEvent,
-  fTUSDRewardQuarantineThresholdUpdated as fTUSDRewardQuarantineThresholdUpdatedEvent,
-  fTUSDTransfer as fTUSDTransferEvent,
-  fTUSDUnblockReward as fTUSDUnblockRewardEvent
+  Approval as fTUSDApprovalEvent,
+  BlockedReward as fTUSDBlockedRewardEvent,
+  BurnFluid as fTUSDBurnFluidEvent,
+  Emergency as fTUSDEmergencyEvent,
+  MaxUncheckedRewardLimitChanged as fTUSDMaxUncheckedRewardLimitChangedEvent,
+  MintApproval as fTUSDMintApprovalEvent,
+  MintFluid as fTUSDMintFluidEvent,
+  NewOperator as fTUSDNewOperatorEvent,
+  OperatorChanged as fTUSDOperatorChangedEvent,
+  Reward as fTUSDRewardEvent,
+  RewardQuarantineThresholdUpdated as fTUSDRewardQuarantineThresholdUpdatedEvent,
+  Transfer as fTUSDTransferEvent,
+  UnblockReward as fTUSDUnblockRewardEvent
 } from "../generated/fTUSD/fTUSD"
 import {
   fTUSDApproval,
@@ -31,7 +31,7 @@ import {
 
 export function handlefTUSDApproval(event: fTUSDApprovalEvent): void {
   let entity = new fTUSDApproval(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.owner = event.params.owner
   entity.spender = event.params.spender
@@ -46,7 +46,7 @@ export function handlefTUSDApproval(event: fTUSDApprovalEvent): void {
 
 export function handlefTUSDBlockedReward(event: fTUSDBlockedRewardEvent): void {
   let entity = new fTUSDBlockedReward(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.winner = event.params.winner
   entity.amount = event.params.amount
@@ -62,7 +62,7 @@ export function handlefTUSDBlockedReward(event: fTUSDBlockedRewardEvent): void {
 
 export function handlefTUSDBurnFluid(event: fTUSDBurnFluidEvent): void {
   let entity = new fTUSDBurnFluid(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.addr = event.params.addr
   entity.amount = event.params.amount
@@ -76,7 +76,7 @@ export function handlefTUSDBurnFluid(event: fTUSDBurnFluidEvent): void {
 
 export function handlefTUSDEmergency(event: fTUSDEmergencyEvent): void {
   let entity = new fTUSDEmergency(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.status = event.params.status
 
@@ -91,7 +91,7 @@ export function handlefTUSDMaxUncheckedRewardLimitChanged(
   event: fTUSDMaxUncheckedRewardLimitChangedEvent
 ): void {
   let entity = new fTUSDMaxUncheckedRewardLimitChanged(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.amount = event.params.amount
 
@@ -104,7 +104,7 @@ export function handlefTUSDMaxUncheckedRewardLimitChanged(
 
 export function handlefTUSDMintApproval(event: fTUSDMintApprovalEvent): void {
   let entity = new fTUSDMintApproval(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.owner = event.params.owner
   entity.spender = event.params.spender
@@ -119,7 +119,7 @@ export function handlefTUSDMintApproval(event: fTUSDMintApprovalEvent): void {
 
 export function handlefTUSDMintFluid(event: fTUSDMintFluidEvent): void {
   let entity = new fTUSDMintFluid(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.addr = event.params.addr
   entity.amount = event.params.amount
@@ -133,7 +133,7 @@ export function handlefTUSDMintFluid(event: fTUSDMintFluidEvent): void {
 
 export function handlefTUSDNewOperator(event: fTUSDNewOperatorEvent): void {
   let entity = new fTUSDNewOperator(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.old = event.params.old
   entity.new_ = event.params.new_
@@ -149,7 +149,7 @@ export function handlefTUSDOperatorChanged(
   event: fTUSDOperatorChangedEvent
 ): void {
   let entity = new fTUSDOperatorChanged(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.oldOperator = event.params.oldOperator
   entity.newOperator = event.params.newOperator
@@ -163,7 +163,7 @@ export function handlefTUSDOperatorChanged(
 
 export function handlefTUSDReward(event: fTUSDRewardEvent): void {
   let entity = new fTUSDReward(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.winner = event.params.winner
   entity.amount = event.params.amount
@@ -181,7 +181,7 @@ export function handlefTUSDRewardQuarantineThresholdUpdated(
   event: fTUSDRewardQuarantineThresholdUpdatedEvent
 ): void {
   let entity = new fTUSDRewardQuarantineThresholdUpdated(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.amount = event.params.amount
 
@@ -194,7 +194,7 @@ export function handlefTUSDRewardQuarantineThresholdUpdated(
 
 export function handlefTUSDTransfer(event: fTUSDTransferEvent): void {
   let entity = new fTUSDTransfer(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.from = event.params.from
   entity.to = event.params.to
@@ -209,7 +209,7 @@ export function handlefTUSDTransfer(event: fTUSDTransferEvent): void {
 
 export function handlefTUSDUnblockReward(event: fTUSDUnblockRewardEvent): void {
   let entity = new fTUSDUnblockReward(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.originalRewardTx = event.params.originalRewardTx
   entity.winner = event.params.winner
