@@ -1327,9 +1327,9 @@ export class UnblockReward extends Entity {
 }
 
 export class fDAIApproval extends Entity {
-  constructor(id: Bytes) {
+  constructor(id: string) {
     super();
-    this.set("id", Value.fromBytes(id));
+    this.set("id", Value.fromString(id));
   }
 
   save(): void {
@@ -1337,26 +1337,24 @@ export class fDAIApproval extends Entity {
     assert(id != null, "Cannot save fDAIApproval entity without an ID");
     if (id) {
       assert(
-        id.kind == ValueKind.BYTES,
-        `Entities of type fDAIApproval must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        id.kind == ValueKind.STRING,
+        `Entities of type fDAIApproval must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("fDAIApproval", id.toBytes().toHexString(), this);
+      store.set("fDAIApproval", id.toString(), this);
     }
   }
 
-  static load(id: Bytes): fDAIApproval | null {
-    return changetype<fDAIApproval | null>(
-      store.get("fDAIApproval", id.toHexString())
-    );
+  static load(id: string): fDAIApproval | null {
+    return changetype<fDAIApproval | null>(store.get("fDAIApproval", id));
   }
 
-  get id(): Bytes {
+  get id(): string {
     let value = this.get("id");
-    return value!.toBytes();
+    return value!.toString();
   }
 
-  set id(value: Bytes) {
-    this.set("id", Value.fromBytes(value));
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
   }
 
   get owner(): Bytes {
@@ -1415,9 +1413,9 @@ export class fDAIApproval extends Entity {
 }
 
 export class fDAIBlockedReward extends Entity {
-  constructor(id: Bytes) {
+  constructor(id: string) {
     super();
-    this.set("id", Value.fromBytes(id));
+    this.set("id", Value.fromString(id));
   }
 
   save(): void {
@@ -1425,26 +1423,26 @@ export class fDAIBlockedReward extends Entity {
     assert(id != null, "Cannot save fDAIBlockedReward entity without an ID");
     if (id) {
       assert(
-        id.kind == ValueKind.BYTES,
-        `Entities of type fDAIBlockedReward must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        id.kind == ValueKind.STRING,
+        `Entities of type fDAIBlockedReward must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("fDAIBlockedReward", id.toBytes().toHexString(), this);
+      store.set("fDAIBlockedReward", id.toString(), this);
     }
   }
 
-  static load(id: Bytes): fDAIBlockedReward | null {
+  static load(id: string): fDAIBlockedReward | null {
     return changetype<fDAIBlockedReward | null>(
-      store.get("fDAIBlockedReward", id.toHexString())
+      store.get("fDAIBlockedReward", id)
     );
   }
 
-  get id(): Bytes {
+  get id(): string {
     let value = this.get("id");
-    return value!.toBytes();
+    return value!.toString();
   }
 
-  set id(value: Bytes) {
-    this.set("id", Value.fromBytes(value));
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
   }
 
   get winner(): Bytes {
@@ -1512,9 +1510,9 @@ export class fDAIBlockedReward extends Entity {
 }
 
 export class fDAIBurnFluid extends Entity {
-  constructor(id: Bytes) {
+  constructor(id: string) {
     super();
-    this.set("id", Value.fromBytes(id));
+    this.set("id", Value.fromString(id));
   }
 
   save(): void {
@@ -1522,26 +1520,24 @@ export class fDAIBurnFluid extends Entity {
     assert(id != null, "Cannot save fDAIBurnFluid entity without an ID");
     if (id) {
       assert(
-        id.kind == ValueKind.BYTES,
-        `Entities of type fDAIBurnFluid must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        id.kind == ValueKind.STRING,
+        `Entities of type fDAIBurnFluid must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("fDAIBurnFluid", id.toBytes().toHexString(), this);
+      store.set("fDAIBurnFluid", id.toString(), this);
     }
   }
 
-  static load(id: Bytes): fDAIBurnFluid | null {
-    return changetype<fDAIBurnFluid | null>(
-      store.get("fDAIBurnFluid", id.toHexString())
-    );
+  static load(id: string): fDAIBurnFluid | null {
+    return changetype<fDAIBurnFluid | null>(store.get("fDAIBurnFluid", id));
   }
 
-  get id(): Bytes {
+  get id(): string {
     let value = this.get("id");
-    return value!.toBytes();
+    return value!.toString();
   }
 
-  set id(value: Bytes) {
-    this.set("id", Value.fromBytes(value));
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
   }
 
   get addr(): Bytes {
@@ -1591,9 +1587,9 @@ export class fDAIBurnFluid extends Entity {
 }
 
 export class fDAIEmergency extends Entity {
-  constructor(id: Bytes) {
+  constructor(id: string) {
     super();
-    this.set("id", Value.fromBytes(id));
+    this.set("id", Value.fromString(id));
   }
 
   save(): void {
@@ -1601,26 +1597,24 @@ export class fDAIEmergency extends Entity {
     assert(id != null, "Cannot save fDAIEmergency entity without an ID");
     if (id) {
       assert(
-        id.kind == ValueKind.BYTES,
-        `Entities of type fDAIEmergency must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        id.kind == ValueKind.STRING,
+        `Entities of type fDAIEmergency must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("fDAIEmergency", id.toBytes().toHexString(), this);
+      store.set("fDAIEmergency", id.toString(), this);
     }
   }
 
-  static load(id: Bytes): fDAIEmergency | null {
-    return changetype<fDAIEmergency | null>(
-      store.get("fDAIEmergency", id.toHexString())
-    );
+  static load(id: string): fDAIEmergency | null {
+    return changetype<fDAIEmergency | null>(store.get("fDAIEmergency", id));
   }
 
-  get id(): Bytes {
+  get id(): string {
     let value = this.get("id");
-    return value!.toBytes();
+    return value!.toString();
   }
 
-  set id(value: Bytes) {
-    this.set("id", Value.fromBytes(value));
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
   }
 
   get status(): boolean {
@@ -1661,9 +1655,9 @@ export class fDAIEmergency extends Entity {
 }
 
 export class fDAIMaxUncheckedRewardLimitChanged extends Entity {
-  constructor(id: Bytes) {
+  constructor(id: string) {
     super();
-    this.set("id", Value.fromBytes(id));
+    this.set("id", Value.fromString(id));
   }
 
   save(): void {
@@ -1674,30 +1668,26 @@ export class fDAIMaxUncheckedRewardLimitChanged extends Entity {
     );
     if (id) {
       assert(
-        id.kind == ValueKind.BYTES,
-        `Entities of type fDAIMaxUncheckedRewardLimitChanged must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        id.kind == ValueKind.STRING,
+        `Entities of type fDAIMaxUncheckedRewardLimitChanged must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set(
-        "fDAIMaxUncheckedRewardLimitChanged",
-        id.toBytes().toHexString(),
-        this
-      );
+      store.set("fDAIMaxUncheckedRewardLimitChanged", id.toString(), this);
     }
   }
 
-  static load(id: Bytes): fDAIMaxUncheckedRewardLimitChanged | null {
+  static load(id: string): fDAIMaxUncheckedRewardLimitChanged | null {
     return changetype<fDAIMaxUncheckedRewardLimitChanged | null>(
-      store.get("fDAIMaxUncheckedRewardLimitChanged", id.toHexString())
+      store.get("fDAIMaxUncheckedRewardLimitChanged", id)
     );
   }
 
-  get id(): Bytes {
+  get id(): string {
     let value = this.get("id");
-    return value!.toBytes();
+    return value!.toString();
   }
 
-  set id(value: Bytes) {
-    this.set("id", Value.fromBytes(value));
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
   }
 
   get amount(): BigInt {
@@ -1738,9 +1728,9 @@ export class fDAIMaxUncheckedRewardLimitChanged extends Entity {
 }
 
 export class fDAIMintApproval extends Entity {
-  constructor(id: Bytes) {
+  constructor(id: string) {
     super();
-    this.set("id", Value.fromBytes(id));
+    this.set("id", Value.fromString(id));
   }
 
   save(): void {
@@ -1748,26 +1738,26 @@ export class fDAIMintApproval extends Entity {
     assert(id != null, "Cannot save fDAIMintApproval entity without an ID");
     if (id) {
       assert(
-        id.kind == ValueKind.BYTES,
-        `Entities of type fDAIMintApproval must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        id.kind == ValueKind.STRING,
+        `Entities of type fDAIMintApproval must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("fDAIMintApproval", id.toBytes().toHexString(), this);
+      store.set("fDAIMintApproval", id.toString(), this);
     }
   }
 
-  static load(id: Bytes): fDAIMintApproval | null {
+  static load(id: string): fDAIMintApproval | null {
     return changetype<fDAIMintApproval | null>(
-      store.get("fDAIMintApproval", id.toHexString())
+      store.get("fDAIMintApproval", id)
     );
   }
 
-  get id(): Bytes {
+  get id(): string {
     let value = this.get("id");
-    return value!.toBytes();
+    return value!.toString();
   }
 
-  set id(value: Bytes) {
-    this.set("id", Value.fromBytes(value));
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
   }
 
   get owner(): Bytes {
@@ -1826,9 +1816,9 @@ export class fDAIMintApproval extends Entity {
 }
 
 export class fDAIMintFluid extends Entity {
-  constructor(id: Bytes) {
+  constructor(id: string) {
     super();
-    this.set("id", Value.fromBytes(id));
+    this.set("id", Value.fromString(id));
   }
 
   save(): void {
@@ -1836,26 +1826,24 @@ export class fDAIMintFluid extends Entity {
     assert(id != null, "Cannot save fDAIMintFluid entity without an ID");
     if (id) {
       assert(
-        id.kind == ValueKind.BYTES,
-        `Entities of type fDAIMintFluid must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        id.kind == ValueKind.STRING,
+        `Entities of type fDAIMintFluid must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("fDAIMintFluid", id.toBytes().toHexString(), this);
+      store.set("fDAIMintFluid", id.toString(), this);
     }
   }
 
-  static load(id: Bytes): fDAIMintFluid | null {
-    return changetype<fDAIMintFluid | null>(
-      store.get("fDAIMintFluid", id.toHexString())
-    );
+  static load(id: string): fDAIMintFluid | null {
+    return changetype<fDAIMintFluid | null>(store.get("fDAIMintFluid", id));
   }
 
-  get id(): Bytes {
+  get id(): string {
     let value = this.get("id");
-    return value!.toBytes();
+    return value!.toString();
   }
 
-  set id(value: Bytes) {
-    this.set("id", Value.fromBytes(value));
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
   }
 
   get addr(): Bytes {
@@ -1905,9 +1893,9 @@ export class fDAIMintFluid extends Entity {
 }
 
 export class fDAINewOperator extends Entity {
-  constructor(id: Bytes) {
+  constructor(id: string) {
     super();
-    this.set("id", Value.fromBytes(id));
+    this.set("id", Value.fromString(id));
   }
 
   save(): void {
@@ -1915,26 +1903,24 @@ export class fDAINewOperator extends Entity {
     assert(id != null, "Cannot save fDAINewOperator entity without an ID");
     if (id) {
       assert(
-        id.kind == ValueKind.BYTES,
-        `Entities of type fDAINewOperator must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        id.kind == ValueKind.STRING,
+        `Entities of type fDAINewOperator must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("fDAINewOperator", id.toBytes().toHexString(), this);
+      store.set("fDAINewOperator", id.toString(), this);
     }
   }
 
-  static load(id: Bytes): fDAINewOperator | null {
-    return changetype<fDAINewOperator | null>(
-      store.get("fDAINewOperator", id.toHexString())
-    );
+  static load(id: string): fDAINewOperator | null {
+    return changetype<fDAINewOperator | null>(store.get("fDAINewOperator", id));
   }
 
-  get id(): Bytes {
+  get id(): string {
     let value = this.get("id");
-    return value!.toBytes();
+    return value!.toString();
   }
 
-  set id(value: Bytes) {
-    this.set("id", Value.fromBytes(value));
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
   }
 
   get old(): Bytes {
@@ -1984,9 +1970,9 @@ export class fDAINewOperator extends Entity {
 }
 
 export class fDAIOperatorChanged extends Entity {
-  constructor(id: Bytes) {
+  constructor(id: string) {
     super();
-    this.set("id", Value.fromBytes(id));
+    this.set("id", Value.fromString(id));
   }
 
   save(): void {
@@ -1994,26 +1980,26 @@ export class fDAIOperatorChanged extends Entity {
     assert(id != null, "Cannot save fDAIOperatorChanged entity without an ID");
     if (id) {
       assert(
-        id.kind == ValueKind.BYTES,
-        `Entities of type fDAIOperatorChanged must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        id.kind == ValueKind.STRING,
+        `Entities of type fDAIOperatorChanged must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("fDAIOperatorChanged", id.toBytes().toHexString(), this);
+      store.set("fDAIOperatorChanged", id.toString(), this);
     }
   }
 
-  static load(id: Bytes): fDAIOperatorChanged | null {
+  static load(id: string): fDAIOperatorChanged | null {
     return changetype<fDAIOperatorChanged | null>(
-      store.get("fDAIOperatorChanged", id.toHexString())
+      store.get("fDAIOperatorChanged", id)
     );
   }
 
-  get id(): Bytes {
+  get id(): string {
     let value = this.get("id");
-    return value!.toBytes();
+    return value!.toString();
   }
 
-  set id(value: Bytes) {
-    this.set("id", Value.fromBytes(value));
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
   }
 
   get oldOperator(): Bytes {
@@ -2063,9 +2049,9 @@ export class fDAIOperatorChanged extends Entity {
 }
 
 export class fDAIReward extends Entity {
-  constructor(id: Bytes) {
+  constructor(id: string) {
     super();
-    this.set("id", Value.fromBytes(id));
+    this.set("id", Value.fromString(id));
   }
 
   save(): void {
@@ -2073,26 +2059,24 @@ export class fDAIReward extends Entity {
     assert(id != null, "Cannot save fDAIReward entity without an ID");
     if (id) {
       assert(
-        id.kind == ValueKind.BYTES,
-        `Entities of type fDAIReward must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        id.kind == ValueKind.STRING,
+        `Entities of type fDAIReward must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("fDAIReward", id.toBytes().toHexString(), this);
+      store.set("fDAIReward", id.toString(), this);
     }
   }
 
-  static load(id: Bytes): fDAIReward | null {
-    return changetype<fDAIReward | null>(
-      store.get("fDAIReward", id.toHexString())
-    );
+  static load(id: string): fDAIReward | null {
+    return changetype<fDAIReward | null>(store.get("fDAIReward", id));
   }
 
-  get id(): Bytes {
+  get id(): string {
     let value = this.get("id");
-    return value!.toBytes();
+    return value!.toString();
   }
 
-  set id(value: Bytes) {
-    this.set("id", Value.fromBytes(value));
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
   }
 
   get winner(): Bytes {
@@ -2160,9 +2144,9 @@ export class fDAIReward extends Entity {
 }
 
 export class fDAIRewardQuarantineThresholdUpdated extends Entity {
-  constructor(id: Bytes) {
+  constructor(id: string) {
     super();
-    this.set("id", Value.fromBytes(id));
+    this.set("id", Value.fromString(id));
   }
 
   save(): void {
@@ -2173,30 +2157,26 @@ export class fDAIRewardQuarantineThresholdUpdated extends Entity {
     );
     if (id) {
       assert(
-        id.kind == ValueKind.BYTES,
-        `Entities of type fDAIRewardQuarantineThresholdUpdated must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        id.kind == ValueKind.STRING,
+        `Entities of type fDAIRewardQuarantineThresholdUpdated must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set(
-        "fDAIRewardQuarantineThresholdUpdated",
-        id.toBytes().toHexString(),
-        this
-      );
+      store.set("fDAIRewardQuarantineThresholdUpdated", id.toString(), this);
     }
   }
 
-  static load(id: Bytes): fDAIRewardQuarantineThresholdUpdated | null {
+  static load(id: string): fDAIRewardQuarantineThresholdUpdated | null {
     return changetype<fDAIRewardQuarantineThresholdUpdated | null>(
-      store.get("fDAIRewardQuarantineThresholdUpdated", id.toHexString())
+      store.get("fDAIRewardQuarantineThresholdUpdated", id)
     );
   }
 
-  get id(): Bytes {
+  get id(): string {
     let value = this.get("id");
-    return value!.toBytes();
+    return value!.toString();
   }
 
-  set id(value: Bytes) {
-    this.set("id", Value.fromBytes(value));
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
   }
 
   get amount(): BigInt {
@@ -2237,9 +2217,9 @@ export class fDAIRewardQuarantineThresholdUpdated extends Entity {
 }
 
 export class fDAITransfer extends Entity {
-  constructor(id: Bytes) {
+  constructor(id: string) {
     super();
-    this.set("id", Value.fromBytes(id));
+    this.set("id", Value.fromString(id));
   }
 
   save(): void {
@@ -2247,26 +2227,24 @@ export class fDAITransfer extends Entity {
     assert(id != null, "Cannot save fDAITransfer entity without an ID");
     if (id) {
       assert(
-        id.kind == ValueKind.BYTES,
-        `Entities of type fDAITransfer must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        id.kind == ValueKind.STRING,
+        `Entities of type fDAITransfer must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("fDAITransfer", id.toBytes().toHexString(), this);
+      store.set("fDAITransfer", id.toString(), this);
     }
   }
 
-  static load(id: Bytes): fDAITransfer | null {
-    return changetype<fDAITransfer | null>(
-      store.get("fDAITransfer", id.toHexString())
-    );
+  static load(id: string): fDAITransfer | null {
+    return changetype<fDAITransfer | null>(store.get("fDAITransfer", id));
   }
 
-  get id(): Bytes {
+  get id(): string {
     let value = this.get("id");
-    return value!.toBytes();
+    return value!.toString();
   }
 
-  set id(value: Bytes) {
-    this.set("id", Value.fromBytes(value));
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
   }
 
   get from(): Bytes {
@@ -2325,9 +2303,9 @@ export class fDAITransfer extends Entity {
 }
 
 export class fDAIUnblockReward extends Entity {
-  constructor(id: Bytes) {
+  constructor(id: string) {
     super();
-    this.set("id", Value.fromBytes(id));
+    this.set("id", Value.fromString(id));
   }
 
   save(): void {
@@ -2335,26 +2313,26 @@ export class fDAIUnblockReward extends Entity {
     assert(id != null, "Cannot save fDAIUnblockReward entity without an ID");
     if (id) {
       assert(
-        id.kind == ValueKind.BYTES,
-        `Entities of type fDAIUnblockReward must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        id.kind == ValueKind.STRING,
+        `Entities of type fDAIUnblockReward must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("fDAIUnblockReward", id.toBytes().toHexString(), this);
+      store.set("fDAIUnblockReward", id.toString(), this);
     }
   }
 
-  static load(id: Bytes): fDAIUnblockReward | null {
+  static load(id: string): fDAIUnblockReward | null {
     return changetype<fDAIUnblockReward | null>(
-      store.get("fDAIUnblockReward", id.toHexString())
+      store.get("fDAIUnblockReward", id)
     );
   }
 
-  get id(): Bytes {
+  get id(): string {
     let value = this.get("id");
-    return value!.toBytes();
+    return value!.toString();
   }
 
-  set id(value: Bytes) {
-    this.set("id", Value.fromBytes(value));
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
   }
 
   get originalRewardTx(): Bytes {

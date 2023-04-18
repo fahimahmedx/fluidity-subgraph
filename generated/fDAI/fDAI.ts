@@ -10,16 +10,16 @@ import {
   BigInt
 } from "@graphprotocol/graph-ts";
 
-export class fDAIApproval extends ethereum.Event {
-  get params(): fDAIApproval__Params {
-    return new fDAIApproval__Params(this);
+export class Approval extends ethereum.Event {
+  get params(): Approval__Params {
+    return new Approval__Params(this);
   }
 }
 
-export class fDAIApproval__Params {
-  _event: fDAIApproval;
+export class Approval__Params {
+  _event: Approval;
 
-  constructor(event: fDAIApproval) {
+  constructor(event: Approval) {
     this._event = event;
   }
 
@@ -36,16 +36,16 @@ export class fDAIApproval__Params {
   }
 }
 
-export class fDAIBlockedReward extends ethereum.Event {
-  get params(): fDAIBlockedReward__Params {
-    return new fDAIBlockedReward__Params(this);
+export class BlockedReward extends ethereum.Event {
+  get params(): BlockedReward__Params {
+    return new BlockedReward__Params(this);
   }
 }
 
-export class fDAIBlockedReward__Params {
-  _event: fDAIBlockedReward;
+export class BlockedReward__Params {
+  _event: BlockedReward;
 
-  constructor(event: fDAIBlockedReward) {
+  constructor(event: BlockedReward) {
     this._event = event;
   }
 
@@ -66,16 +66,16 @@ export class fDAIBlockedReward__Params {
   }
 }
 
-export class fDAIBurnFluid extends ethereum.Event {
-  get params(): fDAIBurnFluid__Params {
-    return new fDAIBurnFluid__Params(this);
+export class BurnFluid extends ethereum.Event {
+  get params(): BurnFluid__Params {
+    return new BurnFluid__Params(this);
   }
 }
 
-export class fDAIBurnFluid__Params {
-  _event: fDAIBurnFluid;
+export class BurnFluid__Params {
+  _event: BurnFluid;
 
-  constructor(event: fDAIBurnFluid) {
+  constructor(event: BurnFluid) {
     this._event = event;
   }
 
@@ -88,16 +88,16 @@ export class fDAIBurnFluid__Params {
   }
 }
 
-export class fDAIEmergency extends ethereum.Event {
-  get params(): fDAIEmergency__Params {
-    return new fDAIEmergency__Params(this);
+export class Emergency extends ethereum.Event {
+  get params(): Emergency__Params {
+    return new Emergency__Params(this);
   }
 }
 
-export class fDAIEmergency__Params {
-  _event: fDAIEmergency;
+export class Emergency__Params {
+  _event: Emergency;
 
-  constructor(event: fDAIEmergency) {
+  constructor(event: Emergency) {
     this._event = event;
   }
 
@@ -106,16 +106,16 @@ export class fDAIEmergency__Params {
   }
 }
 
-export class fDAIMaxUncheckedRewardLimitChanged extends ethereum.Event {
-  get params(): fDAIMaxUncheckedRewardLimitChanged__Params {
-    return new fDAIMaxUncheckedRewardLimitChanged__Params(this);
+export class MaxUncheckedRewardLimitChanged extends ethereum.Event {
+  get params(): MaxUncheckedRewardLimitChanged__Params {
+    return new MaxUncheckedRewardLimitChanged__Params(this);
   }
 }
 
-export class fDAIMaxUncheckedRewardLimitChanged__Params {
-  _event: fDAIMaxUncheckedRewardLimitChanged;
+export class MaxUncheckedRewardLimitChanged__Params {
+  _event: MaxUncheckedRewardLimitChanged;
 
-  constructor(event: fDAIMaxUncheckedRewardLimitChanged) {
+  constructor(event: MaxUncheckedRewardLimitChanged) {
     this._event = event;
   }
 
@@ -124,16 +124,16 @@ export class fDAIMaxUncheckedRewardLimitChanged__Params {
   }
 }
 
-export class fDAIMintApproval extends ethereum.Event {
-  get params(): fDAIMintApproval__Params {
-    return new fDAIMintApproval__Params(this);
+export class MintApproval extends ethereum.Event {
+  get params(): MintApproval__Params {
+    return new MintApproval__Params(this);
   }
 }
 
-export class fDAIMintApproval__Params {
-  _event: fDAIMintApproval;
+export class MintApproval__Params {
+  _event: MintApproval;
 
-  constructor(event: fDAIMintApproval) {
+  constructor(event: MintApproval) {
     this._event = event;
   }
 
@@ -150,16 +150,16 @@ export class fDAIMintApproval__Params {
   }
 }
 
-export class fDAIMintFluid extends ethereum.Event {
-  get params(): fDAIMintFluid__Params {
-    return new fDAIMintFluid__Params(this);
+export class MintFluid extends ethereum.Event {
+  get params(): MintFluid__Params {
+    return new MintFluid__Params(this);
   }
 }
 
-export class fDAIMintFluid__Params {
-  _event: fDAIMintFluid;
+export class MintFluid__Params {
+  _event: MintFluid;
 
-  constructor(event: fDAIMintFluid) {
+  constructor(event: MintFluid) {
     this._event = event;
   }
 
@@ -172,16 +172,16 @@ export class fDAIMintFluid__Params {
   }
 }
 
-export class fDAINewOperator extends ethereum.Event {
-  get params(): fDAINewOperator__Params {
-    return new fDAINewOperator__Params(this);
+export class NewOperator extends ethereum.Event {
+  get params(): NewOperator__Params {
+    return new NewOperator__Params(this);
   }
 }
 
-export class fDAINewOperator__Params {
-  _event: fDAINewOperator;
+export class NewOperator__Params {
+  _event: NewOperator;
 
-  constructor(event: fDAINewOperator) {
+  constructor(event: NewOperator) {
     this._event = event;
   }
 
@@ -194,16 +194,16 @@ export class fDAINewOperator__Params {
   }
 }
 
-export class fDAIOperatorChanged extends ethereum.Event {
-  get params(): fDAIOperatorChanged__Params {
-    return new fDAIOperatorChanged__Params(this);
+export class OperatorChanged extends ethereum.Event {
+  get params(): OperatorChanged__Params {
+    return new OperatorChanged__Params(this);
   }
 }
 
-export class fDAIOperatorChanged__Params {
-  _event: fDAIOperatorChanged;
+export class OperatorChanged__Params {
+  _event: OperatorChanged;
 
-  constructor(event: fDAIOperatorChanged) {
+  constructor(event: OperatorChanged) {
     this._event = event;
   }
 
@@ -216,16 +216,16 @@ export class fDAIOperatorChanged__Params {
   }
 }
 
-export class fDAIReward extends ethereum.Event {
-  get params(): fDAIReward__Params {
-    return new fDAIReward__Params(this);
+export class Reward extends ethereum.Event {
+  get params(): Reward__Params {
+    return new Reward__Params(this);
   }
 }
 
-export class fDAIReward__Params {
-  _event: fDAIReward;
+export class Reward__Params {
+  _event: Reward;
 
-  constructor(event: fDAIReward) {
+  constructor(event: Reward) {
     this._event = event;
   }
 
@@ -246,16 +246,16 @@ export class fDAIReward__Params {
   }
 }
 
-export class fDAIRewardQuarantineThresholdUpdated extends ethereum.Event {
-  get params(): fDAIRewardQuarantineThresholdUpdated__Params {
-    return new fDAIRewardQuarantineThresholdUpdated__Params(this);
+export class RewardQuarantineThresholdUpdated extends ethereum.Event {
+  get params(): RewardQuarantineThresholdUpdated__Params {
+    return new RewardQuarantineThresholdUpdated__Params(this);
   }
 }
 
-export class fDAIRewardQuarantineThresholdUpdated__Params {
-  _event: fDAIRewardQuarantineThresholdUpdated;
+export class RewardQuarantineThresholdUpdated__Params {
+  _event: RewardQuarantineThresholdUpdated;
 
-  constructor(event: fDAIRewardQuarantineThresholdUpdated) {
+  constructor(event: RewardQuarantineThresholdUpdated) {
     this._event = event;
   }
 
@@ -264,16 +264,16 @@ export class fDAIRewardQuarantineThresholdUpdated__Params {
   }
 }
 
-export class fDAITransfer extends ethereum.Event {
-  get params(): fDAITransfer__Params {
-    return new fDAITransfer__Params(this);
+export class Transfer extends ethereum.Event {
+  get params(): Transfer__Params {
+    return new Transfer__Params(this);
   }
 }
 
-export class fDAITransfer__Params {
-  _event: fDAITransfer;
+export class Transfer__Params {
+  _event: Transfer;
 
-  constructor(event: fDAITransfer) {
+  constructor(event: Transfer) {
     this._event = event;
   }
 
@@ -290,16 +290,16 @@ export class fDAITransfer__Params {
   }
 }
 
-export class fDAIUnblockReward extends ethereum.Event {
-  get params(): fDAIUnblockReward__Params {
-    return new fDAIUnblockReward__Params(this);
+export class UnblockReward extends ethereum.Event {
+  get params(): UnblockReward__Params {
+    return new UnblockReward__Params(this);
   }
 }
 
-export class fDAIUnblockReward__Params {
-  _event: fDAIUnblockReward;
+export class UnblockReward__Params {
+  _event: UnblockReward;
 
-  constructor(event: fDAIUnblockReward) {
+  constructor(event: UnblockReward) {
     this._event = event;
   }
 

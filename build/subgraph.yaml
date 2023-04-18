@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: fUSDT
@@ -19,7 +19,7 @@ dataSources:
         - Upgraded
       abis:
         - name: fUSDT
-          file: ./abis/fUSDT.json
+          file: fUSDT\abis\fUSDT.json
       eventHandlers:
         - event: AdminChanged(address,address)
           handler: handleAdminChanged
@@ -27,7 +27,7 @@ dataSources:
           handler: handleBeaconUpgraded
         - event: Upgraded(indexed address)
           handler: handleUpgraded
-      file: ./src/f-usdt.ts
+      file: fUSDT\fUSDT.wasm
   - kind: ethereum
     name: fUSDC
     network: mainnet
@@ -55,7 +55,7 @@ dataSources:
         - UnblockReward
       abis:
         - name: fUSDC
-          file: ./abis/fUSDC.json
+          file: fUSDC\abis\fUSDC.json
       eventHandlers:
         - event: Approval(indexed address,indexed address,uint256)
           handler: handleApproval
@@ -83,7 +83,7 @@ dataSources:
           handler: handleTransfer
         - event: UnblockReward(indexed bytes32,indexed address,uint256,uint256,uint256)
           handler: handleUnblockReward
-      file: ./src/f-usdc.ts
+      file: fUSDC\fUSDC.wasm
   - kind: ethereum
     name: fDAI
     network: mainnet
@@ -111,7 +111,7 @@ dataSources:
         - fDAIUnblockReward
       abis:
         - name: fDAI
-          file: ./abis/fDAI.json
+          file: fDAI\abis\fDAI.json
       eventHandlers:
         - event: Approval(indexed address,indexed address,uint256)
           handler: handlefDAIApproval
@@ -139,7 +139,7 @@ dataSources:
           handler: handlefDAITransfer
         - event: UnblockReward(indexed bytes32,indexed address,uint256,uint256,uint256)
           handler: handlefDAIUnblockReward
-      file: ./src/f-dai.ts
+      file: fDAI\fDAI.wasm
   - kind: ethereum
     name: fTUSD
     network: mainnet
@@ -167,7 +167,7 @@ dataSources:
         - fTUSDUnblockReward
       abis:
         - name: fTUSD
-          file: ./abis/fTUSD.json
+          file: fTUSD\abis\fTUSD.json
       eventHandlers:
         - event: fTUSDApproval(indexed address,indexed address,uint256)
           handler: handlefTUSDApproval
@@ -195,7 +195,7 @@ dataSources:
           handler: handlefTUSDTransfer
         - event: fTUSDUnblockReward(indexed bytes32,indexed address,uint256,uint256,uint256)
           handler: handlefTUSDUnblockReward
-      file: ./src/f-tusd.ts
+      file: fTUSD\fTUSD.wasm
   - kind: ethereum
     name: fFRAX
     network: mainnet
@@ -223,7 +223,7 @@ dataSources:
         - fFRAXUnblockReward
       abis:
         - name: fFRAX
-          file: ./abis/fFRAX.json
+          file: fFRAX\abis\fFRAX.json
       eventHandlers:
         - event: fFRAXApproval(indexed address,indexed address,uint256)
           handler: handlefFRAXApproval
@@ -251,4 +251,4 @@ dataSources:
           handler: handlefFRAXTransfer
         - event: fFRAXUnblockReward(indexed bytes32,indexed address,uint256,uint256,uint256)
           handler: handlefFRAXUnblockReward
-      file: ./src/f-frax.ts
+      file: fFRAX\fFRAX.wasm

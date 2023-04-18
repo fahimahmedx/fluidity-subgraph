@@ -1,17 +1,17 @@
 import {
-  fDAIApproval as fDAIApprovalEvent,
-  fDAIBlockedReward as fDAIBlockedRewardEvent,
-  fDAIBurnFluid as fDAIBurnFluidEvent,
-  fDAIEmergency as fDAIEmergencyEvent,
-  fDAIMaxUncheckedRewardLimitChanged as fDAIMaxUncheckedRewardLimitChangedEvent,
-  fDAIMintApproval as fDAIMintApprovalEvent,
-  fDAIMintFluid as fDAIMintFluidEvent,
-  fDAINewOperator as fDAINewOperatorEvent,
-  fDAIOperatorChanged as fDAIOperatorChangedEvent,
-  fDAIReward as fDAIRewardEvent,
-  fDAIRewardQuarantineThresholdUpdated as fDAIRewardQuarantineThresholdUpdatedEvent,
-  fDAITransfer as fDAITransferEvent,
-  fDAIUnblockReward as fDAIUnblockRewardEvent
+  Approval as fDAIApprovalEvent,
+  BlockedReward as fDAIBlockedRewardEvent,
+  BurnFluid as fDAIBurnFluidEvent,
+  Emergency as fDAIEmergencyEvent,
+  MaxUncheckedRewardLimitChanged as fDAIMaxUncheckedRewardLimitChangedEvent,
+  MintApproval as fDAIMintApprovalEvent,
+  MintFluid as fDAIMintFluidEvent,
+  NewOperator as fDAINewOperatorEvent,
+  OperatorChanged as fDAIOperatorChangedEvent,
+  Reward as fDAIRewardEvent,
+  RewardQuarantineThresholdUpdated as fDAIRewardQuarantineThresholdUpdatedEvent,
+  Transfer as fDAITransferEvent,
+  UnblockReward as fDAIUnblockRewardEvent
 } from "../generated/fDAI/fDAI"
 import {
   fDAIApproval,
@@ -29,9 +29,11 @@ import {
   fDAIUnblockReward
 } from "../generated/schema"
 
+import { log } from '@graphprotocol/graph-ts'
+
 export function handlefDAIApproval(event: fDAIApprovalEvent): void {
   let entity = new fDAIApproval(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.owner = event.params.owner
   entity.spender = event.params.spender
@@ -46,7 +48,7 @@ export function handlefDAIApproval(event: fDAIApprovalEvent): void {
 
 export function handlefDAIBlockedReward(event: fDAIBlockedRewardEvent): void {
   let entity = new fDAIBlockedReward(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.winner = event.params.winner
   entity.amount = event.params.amount
@@ -62,7 +64,7 @@ export function handlefDAIBlockedReward(event: fDAIBlockedRewardEvent): void {
 
 export function handlefDAIBurnFluid(event: fDAIBurnFluidEvent): void {
   let entity = new fDAIBurnFluid(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.addr = event.params.addr
   entity.amount = event.params.amount
@@ -76,7 +78,7 @@ export function handlefDAIBurnFluid(event: fDAIBurnFluidEvent): void {
 
 export function handlefDAIEmergency(event: fDAIEmergencyEvent): void {
   let entity = new fDAIEmergency(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.status = event.params.status
 
@@ -91,7 +93,7 @@ export function handlefDAIMaxUncheckedRewardLimitChanged(
   event: fDAIMaxUncheckedRewardLimitChangedEvent
 ): void {
   let entity = new fDAIMaxUncheckedRewardLimitChanged(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.amount = event.params.amount
 
@@ -104,7 +106,7 @@ export function handlefDAIMaxUncheckedRewardLimitChanged(
 
 export function handlefDAIMintApproval(event: fDAIMintApprovalEvent): void {
   let entity = new fDAIMintApproval(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.owner = event.params.owner
   entity.spender = event.params.spender
@@ -119,7 +121,7 @@ export function handlefDAIMintApproval(event: fDAIMintApprovalEvent): void {
 
 export function handlefDAIMintFluid(event: fDAIMintFluidEvent): void {
   let entity = new fDAIMintFluid(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.addr = event.params.addr
   entity.amount = event.params.amount
@@ -133,7 +135,7 @@ export function handlefDAIMintFluid(event: fDAIMintFluidEvent): void {
 
 export function handlefDAINewOperator(event: fDAINewOperatorEvent): void {
   let entity = new fDAINewOperator(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.old = event.params.old
   entity.new_ = event.params.new_
@@ -149,7 +151,7 @@ export function handlefDAIOperatorChanged(
   event: fDAIOperatorChangedEvent
 ): void {
   let entity = new fDAIOperatorChanged(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.oldOperator = event.params.oldOperator
   entity.newOperator = event.params.newOperator
@@ -163,7 +165,7 @@ export function handlefDAIOperatorChanged(
 
 export function handlefDAIReward(event: fDAIRewardEvent): void {
   let entity = new fDAIReward(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.winner = event.params.winner
   entity.amount = event.params.amount
@@ -181,7 +183,7 @@ export function handlefDAIRewardQuarantineThresholdUpdated(
   event: fDAIRewardQuarantineThresholdUpdatedEvent
 ): void {
   let entity = new fDAIRewardQuarantineThresholdUpdated(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.amount = event.params.amount
 
@@ -194,7 +196,7 @@ export function handlefDAIRewardQuarantineThresholdUpdated(
 
 export function handlefDAITransfer(event: fDAITransferEvent): void {
   let entity = new fDAITransfer(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.from = event.params.from
   entity.to = event.params.to
@@ -209,7 +211,7 @@ export function handlefDAITransfer(event: fDAITransferEvent): void {
 
 export function handlefDAIUnblockReward(event: fDAIUnblockRewardEvent): void {
   let entity = new fDAIUnblockReward(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.originalRewardTx = event.params.originalRewardTx
   entity.winner = event.params.winner
