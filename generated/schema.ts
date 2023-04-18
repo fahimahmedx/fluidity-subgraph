@@ -1095,7 +1095,7 @@ export class fUSDTUnblockReward extends Entity {
   }
 }
 
-export class Approval extends Entity {
+export class fUSDCApproval extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -1103,18 +1103,18 @@ export class Approval extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save Approval entity without an ID");
+    assert(id != null, "Cannot save fUSDCApproval entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type Approval must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type fUSDCApproval must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("Approval", id.toString(), this);
+      store.set("fUSDCApproval", id.toString(), this);
     }
   }
 
-  static load(id: string): Approval | null {
-    return changetype<Approval | null>(store.get("Approval", id));
+  static load(id: string): fUSDCApproval | null {
+    return changetype<fUSDCApproval | null>(store.get("fUSDCApproval", id));
   }
 
   get id(): string {
@@ -1181,7 +1181,7 @@ export class Approval extends Entity {
   }
 }
 
-export class BlockedReward extends Entity {
+export class fUSDCBlockedReward extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -1189,18 +1189,20 @@ export class BlockedReward extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save BlockedReward entity without an ID");
+    assert(id != null, "Cannot save fUSDCBlockedReward entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type BlockedReward must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type fUSDCBlockedReward must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("BlockedReward", id.toString(), this);
+      store.set("fUSDCBlockedReward", id.toString(), this);
     }
   }
 
-  static load(id: string): BlockedReward | null {
-    return changetype<BlockedReward | null>(store.get("BlockedReward", id));
+  static load(id: string): fUSDCBlockedReward | null {
+    return changetype<fUSDCBlockedReward | null>(
+      store.get("fUSDCBlockedReward", id)
+    );
   }
 
   get id(): string {
@@ -1276,7 +1278,7 @@ export class BlockedReward extends Entity {
   }
 }
 
-export class BurnFluid extends Entity {
+export class fUSDCBurnFluid extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -1284,18 +1286,18 @@ export class BurnFluid extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save BurnFluid entity without an ID");
+    assert(id != null, "Cannot save fUSDCBurnFluid entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type BurnFluid must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type fUSDCBurnFluid must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("BurnFluid", id.toString(), this);
+      store.set("fUSDCBurnFluid", id.toString(), this);
     }
   }
 
-  static load(id: string): BurnFluid | null {
-    return changetype<BurnFluid | null>(store.get("BurnFluid", id));
+  static load(id: string): fUSDCBurnFluid | null {
+    return changetype<fUSDCBurnFluid | null>(store.get("fUSDCBurnFluid", id));
   }
 
   get id(): string {
@@ -1353,7 +1355,7 @@ export class BurnFluid extends Entity {
   }
 }
 
-export class Emergency extends Entity {
+export class fUSDCEmergency extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -1361,18 +1363,18 @@ export class Emergency extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save Emergency entity without an ID");
+    assert(id != null, "Cannot save fUSDCEmergency entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type Emergency must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type fUSDCEmergency must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("Emergency", id.toString(), this);
+      store.set("fUSDCEmergency", id.toString(), this);
     }
   }
 
-  static load(id: string): Emergency | null {
-    return changetype<Emergency | null>(store.get("Emergency", id));
+  static load(id: string): fUSDCEmergency | null {
+    return changetype<fUSDCEmergency | null>(store.get("fUSDCEmergency", id));
   }
 
   get id(): string {
@@ -1421,7 +1423,7 @@ export class Emergency extends Entity {
   }
 }
 
-export class MaxUncheckedRewardLimitChanged extends Entity {
+export class fUSDCMaxUncheckedRewardLimitChanged extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -1431,20 +1433,20 @@ export class MaxUncheckedRewardLimitChanged extends Entity {
     let id = this.get("id");
     assert(
       id != null,
-      "Cannot save MaxUncheckedRewardLimitChanged entity without an ID"
+      "Cannot save fUSDCMaxUncheckedRewardLimitChanged entity without an ID"
     );
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type MaxUncheckedRewardLimitChanged must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type fUSDCMaxUncheckedRewardLimitChanged must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("MaxUncheckedRewardLimitChanged", id.toString(), this);
+      store.set("fUSDCMaxUncheckedRewardLimitChanged", id.toString(), this);
     }
   }
 
-  static load(id: string): MaxUncheckedRewardLimitChanged | null {
-    return changetype<MaxUncheckedRewardLimitChanged | null>(
-      store.get("MaxUncheckedRewardLimitChanged", id)
+  static load(id: string): fUSDCMaxUncheckedRewardLimitChanged | null {
+    return changetype<fUSDCMaxUncheckedRewardLimitChanged | null>(
+      store.get("fUSDCMaxUncheckedRewardLimitChanged", id)
     );
   }
 
@@ -1494,7 +1496,7 @@ export class MaxUncheckedRewardLimitChanged extends Entity {
   }
 }
 
-export class MintApproval extends Entity {
+export class fUSDCMintApproval extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -1502,18 +1504,20 @@ export class MintApproval extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save MintApproval entity without an ID");
+    assert(id != null, "Cannot save fUSDCMintApproval entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type MintApproval must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type fUSDCMintApproval must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("MintApproval", id.toString(), this);
+      store.set("fUSDCMintApproval", id.toString(), this);
     }
   }
 
-  static load(id: string): MintApproval | null {
-    return changetype<MintApproval | null>(store.get("MintApproval", id));
+  static load(id: string): fUSDCMintApproval | null {
+    return changetype<fUSDCMintApproval | null>(
+      store.get("fUSDCMintApproval", id)
+    );
   }
 
   get id(): string {
@@ -1580,7 +1584,7 @@ export class MintApproval extends Entity {
   }
 }
 
-export class MintFluid extends Entity {
+export class fUSDCMintFluid extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -1588,18 +1592,18 @@ export class MintFluid extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save MintFluid entity without an ID");
+    assert(id != null, "Cannot save fUSDCMintFluid entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type MintFluid must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type fUSDCMintFluid must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("MintFluid", id.toString(), this);
+      store.set("fUSDCMintFluid", id.toString(), this);
     }
   }
 
-  static load(id: string): MintFluid | null {
-    return changetype<MintFluid | null>(store.get("MintFluid", id));
+  static load(id: string): fUSDCMintFluid | null {
+    return changetype<fUSDCMintFluid | null>(store.get("fUSDCMintFluid", id));
   }
 
   get id(): string {
@@ -1657,7 +1661,7 @@ export class MintFluid extends Entity {
   }
 }
 
-export class NewOperator extends Entity {
+export class fUSDCNewOperator extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -1665,18 +1669,20 @@ export class NewOperator extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save NewOperator entity without an ID");
+    assert(id != null, "Cannot save fUSDCNewOperator entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type NewOperator must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type fUSDCNewOperator must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("NewOperator", id.toString(), this);
+      store.set("fUSDCNewOperator", id.toString(), this);
     }
   }
 
-  static load(id: string): NewOperator | null {
-    return changetype<NewOperator | null>(store.get("NewOperator", id));
+  static load(id: string): fUSDCNewOperator | null {
+    return changetype<fUSDCNewOperator | null>(
+      store.get("fUSDCNewOperator", id)
+    );
   }
 
   get id(): string {
@@ -1734,7 +1740,7 @@ export class NewOperator extends Entity {
   }
 }
 
-export class OperatorChanged extends Entity {
+export class fUSDCOperatorChanged extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -1742,18 +1748,20 @@ export class OperatorChanged extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save OperatorChanged entity without an ID");
+    assert(id != null, "Cannot save fUSDCOperatorChanged entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type OperatorChanged must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type fUSDCOperatorChanged must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("OperatorChanged", id.toString(), this);
+      store.set("fUSDCOperatorChanged", id.toString(), this);
     }
   }
 
-  static load(id: string): OperatorChanged | null {
-    return changetype<OperatorChanged | null>(store.get("OperatorChanged", id));
+  static load(id: string): fUSDCOperatorChanged | null {
+    return changetype<fUSDCOperatorChanged | null>(
+      store.get("fUSDCOperatorChanged", id)
+    );
   }
 
   get id(): string {
@@ -1811,7 +1819,7 @@ export class OperatorChanged extends Entity {
   }
 }
 
-export class Reward extends Entity {
+export class fUSDCReward extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -1819,18 +1827,18 @@ export class Reward extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save Reward entity without an ID");
+    assert(id != null, "Cannot save fUSDCReward entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type Reward must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type fUSDCReward must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("Reward", id.toString(), this);
+      store.set("fUSDCReward", id.toString(), this);
     }
   }
 
-  static load(id: string): Reward | null {
-    return changetype<Reward | null>(store.get("Reward", id));
+  static load(id: string): fUSDCReward | null {
+    return changetype<fUSDCReward | null>(store.get("fUSDCReward", id));
   }
 
   get id(): string {
@@ -1906,7 +1914,7 @@ export class Reward extends Entity {
   }
 }
 
-export class RewardQuarantineThresholdUpdated extends Entity {
+export class fUSDCRewardQuarantineThresholdUpdated extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -1916,20 +1924,20 @@ export class RewardQuarantineThresholdUpdated extends Entity {
     let id = this.get("id");
     assert(
       id != null,
-      "Cannot save RewardQuarantineThresholdUpdated entity without an ID"
+      "Cannot save fUSDCRewardQuarantineThresholdUpdated entity without an ID"
     );
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type RewardQuarantineThresholdUpdated must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type fUSDCRewardQuarantineThresholdUpdated must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("RewardQuarantineThresholdUpdated", id.toString(), this);
+      store.set("fUSDCRewardQuarantineThresholdUpdated", id.toString(), this);
     }
   }
 
-  static load(id: string): RewardQuarantineThresholdUpdated | null {
-    return changetype<RewardQuarantineThresholdUpdated | null>(
-      store.get("RewardQuarantineThresholdUpdated", id)
+  static load(id: string): fUSDCRewardQuarantineThresholdUpdated | null {
+    return changetype<fUSDCRewardQuarantineThresholdUpdated | null>(
+      store.get("fUSDCRewardQuarantineThresholdUpdated", id)
     );
   }
 
@@ -1979,7 +1987,7 @@ export class RewardQuarantineThresholdUpdated extends Entity {
   }
 }
 
-export class Transfer extends Entity {
+export class fUSDCTransfer extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -1987,18 +1995,18 @@ export class Transfer extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save Transfer entity without an ID");
+    assert(id != null, "Cannot save fUSDCTransfer entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type Transfer must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type fUSDCTransfer must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("Transfer", id.toString(), this);
+      store.set("fUSDCTransfer", id.toString(), this);
     }
   }
 
-  static load(id: string): Transfer | null {
-    return changetype<Transfer | null>(store.get("Transfer", id));
+  static load(id: string): fUSDCTransfer | null {
+    return changetype<fUSDCTransfer | null>(store.get("fUSDCTransfer", id));
   }
 
   get id(): string {
@@ -2065,7 +2073,7 @@ export class Transfer extends Entity {
   }
 }
 
-export class UnblockReward extends Entity {
+export class fUSDCUnblockReward extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -2073,18 +2081,20 @@ export class UnblockReward extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save UnblockReward entity without an ID");
+    assert(id != null, "Cannot save fUSDCUnblockReward entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type UnblockReward must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type fUSDCUnblockReward must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("UnblockReward", id.toString(), this);
+      store.set("fUSDCUnblockReward", id.toString(), this);
     }
   }
 
-  static load(id: string): UnblockReward | null {
-    return changetype<UnblockReward | null>(store.get("UnblockReward", id));
+  static load(id: string): fUSDCUnblockReward | null {
+    return changetype<fUSDCUnblockReward | null>(
+      store.get("fUSDCUnblockReward", id)
+    );
   }
 
   get id(): string {

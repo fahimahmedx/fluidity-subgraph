@@ -1,36 +1,36 @@
 import {
-  Approval as ApprovalEvent,
-  BlockedReward as BlockedRewardEvent,
-  BurnFluid as BurnFluidEvent,
-  Emergency as EmergencyEvent,
-  MaxUncheckedRewardLimitChanged as MaxUncheckedRewardLimitChangedEvent,
-  MintApproval as MintApprovalEvent,
-  MintFluid as MintFluidEvent,
-  NewOperator as NewOperatorEvent,
-  OperatorChanged as OperatorChangedEvent,
-  Reward as RewardEvent,
-  RewardQuarantineThresholdUpdated as RewardQuarantineThresholdUpdatedEvent,
-  Transfer as TransferEvent,
-  UnblockReward as UnblockRewardEvent
+  Approval as fUSDCApprovalEvent,
+  BlockedReward as fUSDCBlockedRewardEvent,
+  BurnFluid as fUSDCBurnFluidEvent,
+  Emergency as fUSDCEmergencyEvent,
+  MaxUncheckedRewardLimitChanged as fUSDCMaxUncheckedRewardLimitChangedEvent,
+  MintApproval as fUSDCMintApprovalEvent,
+  MintFluid as fUSDCMintFluidEvent,
+  NewOperator as fUSDCNewOperatorEvent,
+  OperatorChanged as fUSDCOperatorChangedEvent,
+  Reward as fUSDCRewardEvent,
+  RewardQuarantineThresholdUpdated as fUSDCRewardQuarantineThresholdUpdatedEvent,
+  Transfer as fUSDCTransferEvent,
+  UnblockReward as fUSDCUnblockRewardEvent
 } from "../generated/fUSDC/fUSDC"
 import {
-  Approval,
-  BlockedReward,
-  BurnFluid,
-  Emergency,
-  MaxUncheckedRewardLimitChanged,
-  MintApproval,
-  MintFluid,
-  NewOperator,
-  OperatorChanged,
-  Reward,
-  RewardQuarantineThresholdUpdated,
-  Transfer,
-  UnblockReward
+  fUSDCApproval,
+  fUSDCBlockedReward,
+  fUSDCBurnFluid,
+  fUSDCEmergency,
+  fUSDCMaxUncheckedRewardLimitChanged,
+  fUSDCMintApproval,
+  fUSDCMintFluid,
+  fUSDCNewOperator,
+  fUSDCOperatorChanged,
+  fUSDCReward,
+  fUSDCRewardQuarantineThresholdUpdated,
+  fUSDCTransfer,
+  fUSDCUnblockReward
 } from "../generated/schema"
 
-export function handleApproval(event: ApprovalEvent): void {
-  let entity = new Approval(
+export function handlefUSDCApproval(event: fUSDCApprovalEvent): void {
+  let entity = new fUSDCApproval(
     event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.owner = event.params.owner
@@ -44,8 +44,8 @@ export function handleApproval(event: ApprovalEvent): void {
   entity.save()
 }
 
-export function handleBlockedReward(event: BlockedRewardEvent): void {
-  let entity = new BlockedReward(
+export function handlefUSDCBlockedReward(event: fUSDCBlockedRewardEvent): void {
+  let entity = new fUSDCBlockedReward(
     event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.winner = event.params.winner
@@ -60,8 +60,8 @@ export function handleBlockedReward(event: BlockedRewardEvent): void {
   entity.save()
 }
 
-export function handleBurnFluid(event: BurnFluidEvent): void {
-  let entity = new BurnFluid(
+export function handlefUSDCBurnFluid(event: fUSDCBurnFluidEvent): void {
+  let entity = new fUSDCBurnFluid(
     event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.addr = event.params.addr
@@ -74,8 +74,8 @@ export function handleBurnFluid(event: BurnFluidEvent): void {
   entity.save()
 }
 
-export function handleEmergency(event: EmergencyEvent): void {
-  let entity = new Emergency(
+export function handlefUSDCEmergency(event: fUSDCEmergencyEvent): void {
+  let entity = new fUSDCEmergency(
     event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.status = event.params.status
@@ -87,10 +87,10 @@ export function handleEmergency(event: EmergencyEvent): void {
   entity.save()
 }
 
-export function handleMaxUncheckedRewardLimitChanged(
-  event: MaxUncheckedRewardLimitChangedEvent
+export function handlefUSDCMaxUncheckedRewardLimitChanged(
+  event: fUSDCMaxUncheckedRewardLimitChangedEvent
 ): void {
-  let entity = new MaxUncheckedRewardLimitChanged(
+  let entity = new fUSDCMaxUncheckedRewardLimitChanged(
     event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.amount = event.params.amount
@@ -102,8 +102,8 @@ export function handleMaxUncheckedRewardLimitChanged(
   entity.save()
 }
 
-export function handleMintApproval(event: MintApprovalEvent): void {
-  let entity = new MintApproval(
+export function handlefUSDCMintApproval(event: fUSDCMintApprovalEvent): void {
+  let entity = new fUSDCMintApproval(
     event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.owner = event.params.owner
@@ -117,8 +117,8 @@ export function handleMintApproval(event: MintApprovalEvent): void {
   entity.save()
 }
 
-export function handleMintFluid(event: MintFluidEvent): void {
-  let entity = new MintFluid(
+export function handlefUSDCMintFluid(event: fUSDCMintFluidEvent): void {
+  let entity = new fUSDCMintFluid(
     event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.addr = event.params.addr
@@ -131,8 +131,8 @@ export function handleMintFluid(event: MintFluidEvent): void {
   entity.save()
 }
 
-export function handleNewOperator(event: NewOperatorEvent): void {
-  let entity = new NewOperator(
+export function handlefUSDCNewOperator(event: fUSDCNewOperatorEvent): void {
+  let entity = new fUSDCNewOperator(
     event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.old = event.params.old
@@ -145,8 +145,10 @@ export function handleNewOperator(event: NewOperatorEvent): void {
   entity.save()
 }
 
-export function handleOperatorChanged(event: OperatorChangedEvent): void {
-  let entity = new OperatorChanged(
+export function handlefUSDCOperatorChanged(
+  event: fUSDCOperatorChangedEvent
+): void {
+  let entity = new fUSDCOperatorChanged(
     event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.oldOperator = event.params.oldOperator
@@ -159,8 +161,8 @@ export function handleOperatorChanged(event: OperatorChangedEvent): void {
   entity.save()
 }
 
-export function handleReward(event: RewardEvent): void {
-  let entity = new Reward(
+export function handlefUSDCReward(event: fUSDCRewardEvent): void {
+  let entity = new fUSDCReward(
     event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.winner = event.params.winner
@@ -175,10 +177,10 @@ export function handleReward(event: RewardEvent): void {
   entity.save()
 }
 
-export function handleRewardQuarantineThresholdUpdated(
-  event: RewardQuarantineThresholdUpdatedEvent
+export function handlefUSDCRewardQuarantineThresholdUpdated(
+  event: fUSDCRewardQuarantineThresholdUpdatedEvent
 ): void {
-  let entity = new RewardQuarantineThresholdUpdated(
+  let entity = new fUSDCRewardQuarantineThresholdUpdated(
     event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.amount = event.params.amount
@@ -190,8 +192,8 @@ export function handleRewardQuarantineThresholdUpdated(
   entity.save()
 }
 
-export function handleTransfer(event: TransferEvent): void {
-  let entity = new Transfer(
+export function handlefUSDCTransfer(event: fUSDCTransferEvent): void {
+  let entity = new fUSDCTransfer(
     event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.from = event.params.from
@@ -205,8 +207,8 @@ export function handleTransfer(event: TransferEvent): void {
   entity.save()
 }
 
-export function handleUnblockReward(event: UnblockRewardEvent): void {
-  let entity = new UnblockReward(
+export function handlefUSDCUnblockReward(event: fUSDCUnblockRewardEvent): void {
+  let entity = new fUSDCUnblockReward(
     event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
   entity.originalRewardTx = event.params.originalRewardTx

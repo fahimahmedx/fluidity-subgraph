@@ -54,7 +54,7 @@ dataSources:
         - event: RewardQuarantineThresholdUpdated(uint256)
           handler: handlefUSDTRewardQuarantineThresholdUpdated
         - event: Transfer(indexed address,indexed address,uint256)
-          handler: handlefFUSDTransfer
+          handler: handlefUSDTTransfer
         - event: UnblockReward(indexed bytes32,indexed address,uint256,uint256,uint256)
           handler: handlefUSDTUnblockReward
       file: ./src/f-usdt.ts
@@ -70,49 +70,49 @@ dataSources:
       apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
-        - Approval
-        - BlockedReward
-        - BurnFluid
-        - Emergency
-        - MaxUncheckedRewardLimitChanged
-        - MintApproval
-        - MintFluid
-        - NewOperator
-        - OperatorChanged
-        - Reward
-        - RewardQuarantineThresholdUpdated
-        - Transfer
-        - UnblockReward
+        - fUSDCApproval
+        - fUSDCBlockedReward
+        - fUSDCBurnFluid
+        - fUSDCEmergency
+        - fUSDCMaxUncheckedRewardLimitChanged
+        - fUSDCMintApproval
+        - fUSDCMintFluid
+        - fUSDCNewOperator
+        - fUSDCOperatorChanged
+        - fUSDCReward
+        - fUSDCRewardQuarantineThresholdUpdated
+        - fUSDCTransfer
+        - fUSDCUnblockReward
       abis:
         - name: fUSDC
           file: ./abis/fUSDC.json
       eventHandlers:
         - event: Approval(indexed address,indexed address,uint256)
-          handler: handleApproval
+          handler: handlefUSDCApproval
         - event: BlockedReward(indexed address,uint256,uint256,uint256)
-          handler: handleBlockedReward
+          handler: handlefUSDCBlockedReward
         - event: BurnFluid(indexed address,uint256)
-          handler: handleBurnFluid
+          handler: handlefUSDCBurnFluid
         - event: Emergency(indexed bool)
-          handler: handleEmergency
+          handler: handlefUSDCEmergency
         - event: MaxUncheckedRewardLimitChanged(uint256)
-          handler: handleMaxUncheckedRewardLimitChanged
+          handler: handlefUSDCMaxUncheckedRewardLimitChanged
         - event: MintApproval(indexed address,indexed address,uint256)
-          handler: handleMintApproval
+          handler: handlefUSDCMintApproval
         - event: MintFluid(indexed address,uint256)
-          handler: handleMintFluid
+          handler: handlefUSDCMintFluid
         - event: NewOperator(address,address)
-          handler: handleNewOperator
+          handler: handlefUSDCNewOperator
         - event: OperatorChanged(indexed address,indexed address)
-          handler: handleOperatorChanged
+          handler: handlefUSDCOperatorChanged
         - event: Reward(indexed address,uint256,uint256,uint256)
-          handler: handleReward
+          handler: handlefUSDCReward
         - event: RewardQuarantineThresholdUpdated(uint256)
-          handler: handleRewardQuarantineThresholdUpdated
+          handler: handlefUSDCRewardQuarantineThresholdUpdated
         - event: Transfer(indexed address,indexed address,uint256)
-          handler: handleTransfer
+          handler: handlefUSDCTransfer
         - event: UnblockReward(indexed bytes32,indexed address,uint256,uint256,uint256)
-          handler: handleUnblockReward
+          handler: handlefUSDCUnblockReward
       file: ./src/f-usdc.ts
   - kind: ethereum
     name: fDAI
