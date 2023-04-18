@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: fUSDT
-    network: mainnet
+    network: arbitrum-one
     source:
-      address: "0xADc234a4e90E2045f353F5d4fCdE66144d23b458"
+      address: "0xC9FA90D24B7103Ad2215DE52afec5e1E4C7a6e62"
       abi: fUSDT
-      startBlock: 15451100
+      startBlock: 58708667
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -60,11 +60,11 @@ dataSources:
       file: fUSDT\fUSDT.wasm
   - kind: ethereum
     name: fUSDC
-    network: mainnet
+    network: arbitrum-one
     source:
-      address: "0x9d1089802eE608BA84C5c98211afE5f37F96B36C"
+      address: "0x4CFA50B7Ce747e2D61724fcAc57f24B748FF2b2A"
       abi: fUSDC
-      startBlock: 15451248
+      startBlock: 58707793
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -116,11 +116,11 @@ dataSources:
       file: fUSDC\fUSDC.wasm
   - kind: ethereum
     name: fDAI
-    network: mainnet
+    network: arbitrum-one
     source:
-      address: "0x244517Dc59943E8CdFbD424Bdb3262c5f04a1387"
+      address: "0x1b40e7812E75D02Eef97E4399c33865D2Ff5952b"
       abi: fDAI
-      startBlock: 15451278
+      startBlock: 58708827
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -170,115 +170,3 @@ dataSources:
         - event: UnblockReward(indexed bytes32,indexed address,uint256,uint256,uint256)
           handler: handlefDAIUnblockReward
       file: fDAI\fDAI.wasm
-  - kind: ethereum
-    name: fTUSD
-    network: mainnet
-    source:
-      address: "0x0B319dB00d07C8fAdfaAEf13C910141a5dA0aa8F"
-      abi: fTUSD
-      startBlock: 15452030
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.7
-      language: wasm/assemblyscript
-      entities:
-        - fTUSDApproval
-        - fTUSDBlockedReward
-        - fTUSDBurnFluid
-        - fTUSDEmergency
-        - fTUSDMaxUncheckedRewardLimitChanged
-        - fTUSDMintApproval
-        - fTUSDMintFluid
-        - fTUSDNewOperator
-        - fTUSDOperatorChanged
-        - fTUSDReward
-        - fTUSDRewardQuarantineThresholdUpdated
-        - fTUSDTransfer
-        - fTUSDUnblockReward
-      abis:
-        - name: fTUSD
-          file: fTUSD\abis\fTUSD.json
-      eventHandlers:
-        - event: Approval(indexed address,indexed address,uint256)
-          handler: handlefTUSDApproval
-        - event: BlockedReward(indexed address,uint256,uint256,uint256)
-          handler: handlefTUSDBlockedReward
-        - event: BurnFluid(indexed address,uint256)
-          handler: handlefTUSDBurnFluid
-        - event: Emergency(indexed bool)
-          handler: handlefTUSDEmergency
-        - event: MaxUncheckedRewardLimitChanged(uint256)
-          handler: handlefTUSDMaxUncheckedRewardLimitChanged
-        - event: MintApproval(indexed address,indexed address,uint256)
-          handler: handlefTUSDMintApproval
-        - event: MintFluid(indexed address,uint256)
-          handler: handlefTUSDMintFluid
-        - event: NewOperator(address,address)
-          handler: handlefTUSDNewOperator
-        - event: OperatorChanged(indexed address,indexed address)
-          handler: handlefTUSDOperatorChanged
-        - event: Reward(indexed address,uint256,uint256,uint256)
-          handler: handlefTUSDReward
-        - event: RewardQuarantineThresholdUpdated(uint256)
-          handler: handlefTUSDRewardQuarantineThresholdUpdated
-        - event: Transfer(indexed address,indexed address,uint256)
-          handler: handlefTUSDTransfer
-        - event: UnblockReward(indexed bytes32,indexed address,uint256,uint256,uint256)
-          handler: handlefTUSDUnblockReward
-      file: fTUSD\fTUSD.wasm
-  - kind: ethereum
-    name: fFRAX
-    network: mainnet
-    source:
-      address: "0x2bE1e42BF263AaB47D27Ba92E72c14823e101D7C"
-      abi: fFRAX
-      startBlock: 15452045
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.7
-      language: wasm/assemblyscript
-      entities:
-        - fFRAXApproval
-        - fFRAXBlockedReward
-        - fFRAXBurnFluid
-        - fFRAXEmergency
-        - fFRAXMaxUncheckedRewardLimitChanged
-        - fFRAXMintApproval
-        - fFRAXMintFluid
-        - fFRAXNewOperator
-        - fFRAXOperatorChanged
-        - fFRAXReward
-        - fFRAXRewardQuarantineThresholdUpdated
-        - fFRAXTransfer
-        - fFRAXUnblockReward
-      abis:
-        - name: fFRAX
-          file: fFRAX\abis\fFRAX.json
-      eventHandlers:
-        - event: Approval(indexed address,indexed address,uint256)
-          handler: handlefFRAXApproval
-        - event: BlockedReward(indexed address,uint256,uint256,uint256)
-          handler: handlefFRAXBlockedReward
-        - event: BurnFluid(indexed address,uint256)
-          handler: handlefFRAXBurnFluid
-        - event: Emergency(indexed bool)
-          handler: handlefFRAXEmergency
-        - event: MaxUncheckedRewardLimitChanged(uint256)
-          handler: handlefFRAXMaxUncheckedRewardLimitChanged
-        - event: MintApproval(indexed address,indexed address,uint256)
-          handler: handlefFRAXMintApproval
-        - event: MintFluid(indexed address,uint256)
-          handler: handlefFRAXMintFluid
-        - event: NewOperator(address,address)
-          handler: handlefFRAXNewOperator
-        - event: OperatorChanged(indexed address,indexed address)
-          handler: handlefFRAXOperatorChanged
-        - event: Reward(indexed address,uint256,uint256,uint256)
-          handler: handlefFRAXReward
-        - event: RewardQuarantineThresholdUpdated(uint256)
-          handler: handlefFRAXRewardQuarantineThresholdUpdated
-        - event: Transfer(indexed address,indexed address,uint256)
-          handler: handlefFRAXTransfer
-        - event: UnblockReward(indexed bytes32,indexed address,uint256,uint256,uint256)
-          handler: handlefFRAXUnblockReward
-      file: fFRAX\fFRAX.wasm
