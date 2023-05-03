@@ -368,3 +368,12 @@ type fDAIUnblockReward @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+
+type volume @entity {
+		" The token symbol of the fluidity wrapped token"
+    id: ID!
+
+    " Total volume "
+    totalVolume: BigDecimal!
+    
+}

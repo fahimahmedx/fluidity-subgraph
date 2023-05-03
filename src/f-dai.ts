@@ -26,8 +26,12 @@ import {
   fDAIReward,
   fDAIRewardQuarantineThresholdUpdated,
   fDAITransfer,
-  fDAIUnblockReward
+  fDAIUnblockReward,
+  volume
 } from "../generated/schema"
+import {
+  BigDecimal
+} from "@graphprotocol/graph-ts"
 
 import { log } from '@graphprotocol/graph-ts'
 
@@ -198,6 +202,7 @@ export function handlefDAITransfer(event: fDAITransferEvent): void {
   let entity = new fDAITransfer(
     event.transaction.hash.toHexString() + "-" + event.logIndex.toString()
   )
+  
   entity.from = event.params.from
   entity.to = event.params.to
   entity.value = event.params.value
@@ -206,6 +211,19 @@ export function handlefDAITransfer(event: fDAITransferEvent): void {
   entity.blockTimestamp = event.block.timestamp
   entity.transactionHash = event.transaction.hash
 
+  let volumeEntity = volume.load('fDAI')
+  if (volumeEntity) {
+    volumeEntity.totalVolume = volumeEntity.totalVolume.plus(event.params.value.toBigDecimal())
+  } else {
+    volumeEntity = new volume('fDAI')
+    volumeEntity.totalVolume = BigDecimal.fromString("0")
+  }
+
+  // logging
+  log.info('hash-index {}', [event.transaction.hash.toHexString() + "-" + event.logIndex.toString()])
+  log.info('transfer {}', [event.params.value.toString()])
+
+  volumeEntity.save()
   entity.save()
 }
 

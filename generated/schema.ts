@@ -3260,3 +3260,44 @@ export class fDAIUnblockReward extends Entity {
     this.set("transactionHash", Value.fromBytes(value));
   }
 }
+
+export class volume extends Entity {
+  constructor(id: string) {
+    super();
+    this.set("id", Value.fromString(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(id != null, "Cannot save volume entity without an ID");
+    if (id) {
+      assert(
+        id.kind == ValueKind.STRING,
+        `Entities of type volume must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+      );
+      store.set("volume", id.toString(), this);
+    }
+  }
+
+  static load(id: string): volume | null {
+    return changetype<volume | null>(store.get("volume", id));
+  }
+
+  get id(): string {
+    let value = this.get("id");
+    return value!.toString();
+  }
+
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
+  }
+
+  get totalVolume(): BigDecimal {
+    let value = this.get("totalVolume");
+    return value!.toBigDecimal();
+  }
+
+  set totalVolume(value: BigDecimal) {
+    this.set("totalVolume", Value.fromBigDecimal(value));
+  }
+}
