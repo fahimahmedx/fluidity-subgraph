@@ -210,10 +210,10 @@ export function handlefUSDTTransfer(event: fUSDTTransferEvent): void {
 
   let volumeEntity = volume.load('fUSDT')
   if (volumeEntity) {
-    volumeEntity.totalVolume = volumeEntity.totalVolume.plus(event.params.value.toBigDecimal())
+    volumeEntity.totalVolume = volumeEntity.totalVolume.plus(event.params.value.toBigDecimal().div(BigDecimal.fromString("1e6")))
   } else {
     volumeEntity = new volume('fUSDT')
-    volumeEntity.totalVolume = BigDecimal.fromString("0")
+    volumeEntity.totalVolume = event.params.value.toBigDecimal().div(BigDecimal.fromString("1e6"))
   }
 
   volumeEntity.save()

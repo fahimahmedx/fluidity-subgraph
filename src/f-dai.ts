@@ -213,15 +213,11 @@ export function handlefDAITransfer(event: fDAITransferEvent): void {
 
   let volumeEntity = volume.load('fDAI')
   if (volumeEntity) {
-    volumeEntity.totalVolume = volumeEntity.totalVolume.plus(event.params.value.toBigDecimal())
+    volumeEntity.totalVolume = volumeEntity.totalVolume.plus(event.params.value.toBigDecimal().div(BigDecimal.fromString("1e18")))
   } else {
     volumeEntity = new volume('fDAI')
-    volumeEntity.totalVolume = BigDecimal.fromString("0")
+    volumeEntity.totalVolume = event.params.value.toBigDecimal().div(BigDecimal.fromString("1e18"))
   }
-
-  // logging
-  log.info('hash-index {}', [event.transaction.hash.toHexString() + "-" + event.logIndex.toString()])
-  log.info('transfer {}', [event.params.value.toString()])
 
   volumeEntity.save()
   entity.save()
