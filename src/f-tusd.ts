@@ -26,8 +26,12 @@ import {
   fTUSDReward,
   fTUSDRewardQuarantineThresholdUpdated,
   fTUSDTransfer,
-  fTUSDUnblockReward
+  fTUSDUnblockReward,
+  volume
 } from "../generated/schema"
+import {
+  BigDecimal
+} from "@graphprotocol/graph-ts"
 
 export function handlefTUSDApproval(event: fTUSDApprovalEvent): void {
   let entity = new fTUSDApproval(
@@ -204,6 +208,15 @@ export function handlefTUSDTransfer(event: fTUSDTransferEvent): void {
   entity.blockTimestamp = event.block.timestamp
   entity.transactionHash = event.transaction.hash
 
+  let volumeEntity = volume.load('fTUSD')
+  if (volumeEntity) {
+    volumeEntity.totalVolume = volumeEntity.totalVolume.plus(event.params.value.toBigDecimal().div(BigDecimal.fromString("1e18")))
+  } else {
+    volumeEntity = new volume('fTUSD')
+    volumeEntity.totalVolume = event.params.value.toBigDecimal().div(BigDecimal.fromString("1e18"))
+  }
+
+  volumeEntity.save()
   entity.save()
 }
 

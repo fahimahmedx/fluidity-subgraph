@@ -26,8 +26,12 @@ import {
   fUSDCReward,
   fUSDCRewardQuarantineThresholdUpdated,
   fUSDCTransfer,
-  fUSDCUnblockReward
+  fUSDCUnblockReward,
+  volume
 } from "../generated/schema"
+import {
+  BigDecimal
+} from "@graphprotocol/graph-ts"
 
 export function handlefUSDCApproval(event: fUSDCApprovalEvent): void {
   let entity = new fUSDCApproval(
@@ -203,6 +207,16 @@ export function handlefUSDCTransfer(event: fUSDCTransferEvent): void {
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
   entity.transactionHash = event.transaction.hash
+
+  let volumeEntity = volume.load('fUSDC')
+  if (volumeEntity) {
+    volumeEntity.totalVolume = volumeEntity.totalVolume.plus(event.params.value.toBigDecimal().div(BigDecimal.fromString("1e6")))
+  } else {
+    volumeEntity = new volume('fUSDC')
+    volumeEntity.totalVolume = event.params.value.toBigDecimal().div(BigDecimal.fromString("1e6"))
+  }
+
+  volumeEntity.save()
 
   entity.save()
 }

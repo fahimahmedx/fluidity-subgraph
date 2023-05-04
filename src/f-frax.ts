@@ -26,8 +26,12 @@ import {
   fFRAXReward,
   fFRAXRewardQuarantineThresholdUpdated,
   fFRAXTransfer,
-  fFRAXUnblockReward
+  fFRAXUnblockReward,
+  volume
 } from "../generated/schema"
+import {
+  BigDecimal
+} from "@graphprotocol/graph-ts"
 
 export function handlefFRAXApproval(event: fFRAXApprovalEvent): void {
   let entity = new fFRAXApproval(
@@ -204,6 +208,15 @@ export function handlefFRAXTransfer(event: fFRAXTransferEvent): void {
   entity.blockTimestamp = event.block.timestamp
   entity.transactionHash = event.transaction.hash
 
+  let volumeEntity = volume.load('fFRAX')
+  if (volumeEntity) {
+    volumeEntity.totalVolume = volumeEntity.totalVolume.plus(event.params.value.toBigDecimal().div(BigDecimal.fromString("1e18")))
+  } else {
+    volumeEntity = new volume('fFRAX')
+    volumeEntity.totalVolume = event.params.value.toBigDecimal().div(BigDecimal.fromString("1e18"))
+  }
+
+  volumeEntity.save()
   entity.save()
 }
 
